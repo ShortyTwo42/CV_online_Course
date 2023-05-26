@@ -1,7 +1,7 @@
 <!--
 author:   Leon Endris
 
-email:    leendris@t-online.de
+email:    leendris@uni-koblenz.de
 
 version:  0.0.1
 
