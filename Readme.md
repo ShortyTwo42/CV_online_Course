@@ -1,7 +1,7 @@
 <!--
-author:   Your Name
+author:   Leon Endris
 
-email:    your@mail.org
+email:    leendris@t-online.de
 
 version:  0.0.1
 
