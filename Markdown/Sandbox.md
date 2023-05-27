@@ -27,6 +27,6 @@ translation: Français translations/French.md
 This is your **course** initialization stub.
 
 <div>
-    <include src="./HTML/MyPicCoder.html"></include>
+    <include src="../HTML/MyPicCoder.html"></include>
 </div>
 
