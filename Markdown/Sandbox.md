@@ -13,22 +13,18 @@ comment:  This is the sandbox for the
           CV Online course. All Tools will 
           be developed and tested here
 
-link: 
+link: ../CSS/main.css
 
 script:   
 
-translation: Deutsch  translations/German.md
-
-translation: Français translations/French.md
 -->
 
 # Sandbox
 
-This is your **course** initialization stub.
+Hier werden 
 
-[some_description](../HTML/MyPicCoder.html)
+## MyPicCoder
+<iframe src="..\HTML\MyPicCoder.html" class="myPicCoder-include"></iframe>
 
-<div>
-    <include src="../HTML/MyPicCoder.html"></include>
-</div>
+
 
