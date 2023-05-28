@@ -1,30 +1,41 @@
 <!--
-author:   Leon Endris
+author:     Leon Endris
 
-email:    leendris@uni-koblenz.de
+email:      leendris@uni-koblenz.de
 
-version:  0.0.1
+version:    0.0.1
 
-language: de
+language:   de
 
-narrator: Deutsch Female
+narrator:   Deutsch Female
 
-comment:  This is the sandbox for the
-          CV Online course. All Tools will 
-          be developed and tested here
+comment:    Dies ist die Sandbox für den
+            CV Online Kurs. Alle Tools, die für
+            den Kurs entwickelt wurden werden 
+            hier aufgelistet und kurz beschrieben
 
-link: ../CSS/main.css
+link:       ../CSS/main.css 
 
-script:   
+script:     ../JavaScript/LiaScriptCustom.js
 
 -->
 
 # Sandbox
-
-Hier werden 
+Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
 
 ## MyPicCoder
-<iframe src="..\HTML\MyPicCoder.html" class="myPicCoder-include"></iframe>
+Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es können folgende Grafikdateien erstellt werden:
+
+* Portable Bitmap (*.pbm)
+* Portable Greymap (*.pgm)
+* Portable Pixmap (*.ppm)
+* Scalable Vector Graphics (*.svg)
+
+TEST two of them at the same time
+<iframe src="../HTML/MyPicCoder.html" class="include-tool"></iframe>
+
+Number two
+<iframe src="../HTML/MyPicCoder.html" class="include-tool"></iframe>
 
 
 

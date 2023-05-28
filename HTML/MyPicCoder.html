@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="../CSS/fontawesome/css/all.min.css">
         <link rel="stylesheet" href="../CSS/MyPicCoder.css">
+        <script src="../JavaScript/MyPicCoder.js"></script>
     </head>
     <body>
-        <div class="MyPicCoder-range">
-
+        <div class="mpc-range">
+            <div class="mpc-header">
+                <h1>MyPicCoder</h1>
+                <div class="mpc-menu">
+                    <button>
+                        <i class="fa-solid fa-floppy-disk fa-2xl"></i>
+                    </button>
+                    <button>
+                        <i class="fa-solid fa-folder-open fa-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mpc-content">
+                <div class="mpc-codingSpace">
+                    <div class="mpc-editor">
+                        <div class="mpc-lineNumbers">
+                            <span></span>
+                        </div>
+                        <textarea class="mpc-code"></textarea>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
