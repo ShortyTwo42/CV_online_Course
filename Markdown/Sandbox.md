@@ -14,7 +14,7 @@ comment:    Dies ist die Sandbox für den
             den Kurs entwickelt wurden werden 
             hier aufgelistet und kurz beschrieben
 
-link:       ../CSS/main.css 
+link:       ../CSS/Main.css 
 
 script:     ../JavaScript/LiaScriptCustom.js
 
@@ -22,7 +22,7 @@ script:     ../JavaScript/LiaScriptCustom.js
 
 # Sandbox
 Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
-
+ 
 ## MyPicCoder
 Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es können folgende Grafikdateien erstellt werden:
 
@@ -31,11 +31,9 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 * Portable Pixmap (*.ppm)
 * Scalable Vector Graphics (*.svg)
 
-TEST two of them at the same time
-<iframe src="../HTML/MyPicCoder.html" class="include-tool"></iframe>
+Test 1
+??[MyPicCoder](../ToolTemplate/InteractiveCodingTemplate.html)
 
-Number two
-<iframe src="../HTML/MyPicCoder.html" class="include-tool"></iframe>
-
-
+Test 2
+??[MyPicCoder](../HTML/MyPicCoder.html)
 

@@ -9,7 +9,6 @@ html {
 }
 
 .mpc-range h1 {
-    width: 100%;
     text-align: center;
     margin: 0.3rem;
 }
@@ -47,7 +46,6 @@ html {
     font-family: monospace;
     line-height: 1.3rem;
     background: #232323;
-    border-radius: 0.2rem;
     padding: 1rem 0rem;
 }
 
