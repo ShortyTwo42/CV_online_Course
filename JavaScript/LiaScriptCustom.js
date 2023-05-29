@@ -1,7 +1,8 @@
 // resize iframes to fit tools
-let iframes = document.querySelectorAll('.include-tool');
-
-iframes.forEach(resizeFrames);
+function initTools() {
+    let iframes = document.querySelectorAll('.include-tool');
+    iframes.forEach(resizeFrames);
+}
 
 function resizeFrames (iframe) {
     iframe.addEventListener('load', function () {

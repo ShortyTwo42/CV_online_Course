@@ -1,3 +1,4 @@
+/* This part is just for visuals (adding line numbers, adjusting textarea height, ...) */
 // add line numbers to our editor
 document.addEventListener("DOMContentLoaded", function(){
     const mpc_editor = document.querySelector('.mpc-editor');
@@ -19,4 +20,13 @@ function calcHeight(value) {
     // min-height + lines x line-height + padding + border
     let newHeight = 20 + numberOfLineBreaks * 20 + 12 + 2;
     return newHeight;
+}
+
+/* This part deals with the main functions of the 'MyPicCoder' tool */
+function savePicture() {
+    console.log('ToDo')
+}
+   
+function loadPicture() {
+    console.log('ToDo')
 }
