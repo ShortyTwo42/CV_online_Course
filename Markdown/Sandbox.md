@@ -31,9 +31,9 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 * Portable Pixmap (*.ppm)
 * Scalable Vector Graphics (*.svg)
 
-Test 1
+
 ??[MyPicCoder](../ToolTemplate/InteractiveCodingTemplate.html)
 
-Test 2
+
 ??[MyPicCoder](../HTML/MyPicCoder.html)
 

@@ -69,6 +69,10 @@ button {
     background: #232323;
 }
 
+.background-codeSpace {
+    background: #232323;
+}
+
 .ict-lineNumbers {
     min-width: 1.5rem;
     text-align: right;
@@ -116,7 +120,7 @@ button {
 
 .ict-canvas {
     width: 100%;
-    height: 99%;
+    height: 100%;
     background: #ffffff;
 }
 

@@ -23,5 +23,6 @@ script:     ../JavaScript/LiaScriptCustom.js
 # CV Online Kurs
 Hier ist eine Übersicht aller Lektionen des CV Online Kurses
 
+[preview-lia](../Markdown/Rastergraphics.md)
 [preview-lia](../Markdown/Sandbox.md)
 
