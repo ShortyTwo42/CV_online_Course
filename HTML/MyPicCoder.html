@@ -6,16 +6,21 @@
         <script src="../JavaScript/InteractiveCodingTemplate.js"></script>              <!-- keep this for the basic javascript functionalities -->
         <script src="../JavaScript/MyPicCoder.js"></script>
     </head>
-    <body>
+    <body>   
         <div class="ict-range">
             <div class="ict-header">
-                <h1>MyPicCoder</h1>
+                <h1>
+                    MyPicCoder
+                </h1>
                 <div class="ict-menu">
-                    <button onclick="saveFile()">
+                    <button onclick="tryFileDownload()">
                         <i class="fa-solid fa-floppy-disk fa-2xl"></i>
                     </button>
-                    <button onclick="loadFile()">
-                        <i class="fa-solid fa-folder-open fa-2xl"></i>
+                    <button>
+                        <label for="file-upload" class="file_upload_label">
+                            <i class="fa-solid fa-folder-open fa-2xl"></i>
+                        </label>
+                        <input type="file" id="file-upload" class="file_uploader" onchange="tryFileUpload()"/>  
                     </button>
                     <button onclick="toggleView('100%', '0%')" title="Code maximieren">
                         <i class="fa-solid fa-arrow-right fa-2xl"></i>
@@ -30,7 +35,7 @@
             </div>
             <div class="ict-content">
                 <div class="ict-codingSpace">
-                    <div class="ict-wrapper">
+                    <div class="ict-wrapper background-codeSpace">
                         <div class="ict-editor">
                             <div class="ict-lineNumbers">
                                 <span></span>
@@ -40,8 +45,10 @@
                     </div>
                 </div>
                 <div class="ict-previewSpace">
-                    <div class="ict-canvas">
-                        
+                    <div class="ict-wrapper">
+                        <div class="ict-canvas">
+
+                        </div>
                     </div>
                 </div>
             </div>

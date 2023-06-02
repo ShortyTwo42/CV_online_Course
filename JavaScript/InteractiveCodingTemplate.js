@@ -60,3 +60,23 @@ function toggleView(codingSpace_width, previewSpace_width) {
             break
     }
 }
+
+function tryFileUpload() {
+    try {
+        // implement this in your own javascript
+        uploadFile();
+    } 
+    catch {
+        console.log('"uploadFile()" function is not yet implemented! \n Please implement it in your own Javascript.');
+    }
+}
+
+function tryFileDownload() {
+    try {
+        // implement this in your own javascript
+        downloadFile();
+    } 
+    catch {
+        console.log('"downloadFile()" function is not yet implemented! \n Please implement it in your own Javascript.');
+    }
+}

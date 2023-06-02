@@ -32,7 +32,7 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 * Scalable Vector Graphics (*.svg)
 
 
-??[MyPicCoder](../ToolTemplate/InteractiveCodingTemplate.html)
+??[MyPicCoder](../HTML/MyPicCoder.html)
 
 
 ??[MyPicCoder](../HTML/MyPicCoder.html)
