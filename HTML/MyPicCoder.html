@@ -31,6 +31,13 @@
                     <button onclick="toggleView('0%', '100%')" title="Preview maximieren">
                         <i class="fa-solid fa-arrow-left fa-2xl"></i>
                     </button>
+                    <button onclick="display()" title="Lade Preview" class="float-right">
+                        <i class="fa-solid fa-rotate-right fa-2xl"></i>
+                    </button>
+                    <label class="ict-switch float-right" title="Live Preview">
+                        <input type="checkbox" onchange="toggleAutoRefresh(this)" checked>
+                        <span class="ict-slider"></span>
+                    </label>
                 </div>
             </div>
             <div class="ict-content">
@@ -40,15 +47,13 @@
                             <div class="ict-lineNumbers">
                                 <span></span>
                             </div>
-                            <textarea class="ict-code"></textarea>
+                            <textarea class="ict-code" oninput="display()"></textarea>
                         </div>
                     </div>
                 </div>
                 <div class="ict-previewSpace">
-                    <div class="ict-wrapper">
-                        <div class="ict-canvas">
-
-                        </div>
+                    <div class="ict-display">
+                    
                     </div>
                 </div>
             </div>

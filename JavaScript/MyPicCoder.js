@@ -4,43 +4,189 @@ function uploadFile() {
    
 function downloadFile() {
 
-    // get the input of our editor
-    let rawFile = document.querySelector('.ict-code').value.trim();
+    let content = getContent();
 
-    let fileInfo = getFileInfo(rawFile);
-
-    if(fileInfo == -1) {
-        console.log('wrong format');
+    if (content == -1) {
+        console.log('Format wurde nicht erkannt');
         return;
     }
 
-    let fileType = fileInfo.type;
-    let fileExtension = fileInfo.extension;
+    let rawFile = content.rawFile;
 
     // add necessary tags to make it a valid SVG file
-    if(fileType == 'image/svg+xml') {
-        if (!rawFile.includes('xmlns')) {
-            rawFile = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n<svg xmlns="http://www.w3.org/2000/svg">\n${rawFile}\n</svg>`
-        }
-        else {
-            rawFile = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n${rawFile}`
-        }
+    if(content.fileInfo.type == 'image/svg+xml') {
+        rawFile = transformToSvg(rawFile, 'image/svg+xml');
     }
 
-    let blob = new Blob([rawFile], {type: fileType});
+    let blob = new Blob([rawFile], {type: content.fileInfo.type});
 
     let url = window.URL.createObjectURL(blob);
 
     let link = document.createElement('a');
     link.href = url;
-    link.download = 'file.' + fileExtension;
+    link.download = 'file.' + content.fileInfo.extension;
 
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
 
     window.URL.revokeObjectURL(url);
+}
 
+function getContent() {
+    let content = {};
+
+    // get the input of our editor
+    let rawFile = document.querySelector('.ict-code').value.trim();
+
+    let fileInfo = getFileInfo(rawFile);
+
+    if(fileInfo == -1) {
+        return fileInfo;
+    }
+
+    content.fileInfo = fileInfo;
+    content.rawFile = rawFile;
+
+    return content;
+}
+
+function transformToSvg(rawFile, type = 'image/svg+xml') {
+    
+    let svg = '';
+    
+    switch (type) {
+        case 'image/x-portable-bitmap':
+            var cleanFile = preprocessFile(rawFile);
+            console.log(cleanFile);
+
+            var lines = cleanFile.split('\n');              // split lines into array
+            lines.shift();                                  // remove header (P1)
+            var dimensions = lines.shift().split(' ');      // get the dimensions
+            var width = parseInt(dimensions[0]);            // get width from dimension
+            var height = parseInt(dimensions[1]);           // get height from dimension
+
+            svg += '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n';
+            svg += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">\n';
+
+            var picInfo = lines.join(' ').split(/\s+/);
+
+            for (var y = 0; y < height; y++) { 
+                for (var x = 0; x < width; x++) {
+                    
+                    var currIndex = width * y + x;
+                    
+                    // check if in range. If not, set default values
+                    if(currIndex >= picInfo.length) {
+                        var pixelVal = 'white';
+                    }
+                    else {
+                        var pixelVal = parseInt(picInfo[currIndex]) == 1 ? 'black' : 'white';
+                    }
+
+                    var newRect = '<rect x="' + x +'" y="' + y + '" width="1" height="1" fill="'+ pixelVal +'"/>\n'
+                    svg += newRect;
+                }
+            }
+
+            svg += '</svg>';
+
+            break;
+        case 'image/x-portable-graymap':
+            var cleanFile = preprocessFile(rawFile);
+            console.log(cleanFile);
+            
+            var lines = cleanFile.split('\n');              // split lines into array
+            lines.shift();                                  // remove header (P2)
+            var dimensions = lines.shift().split(' ');      // get the dimensions
+            var width = parseInt(dimensions[0]);            // get width from dimension
+            var height = parseInt(dimensions[1]);           // get height from dimension
+            var maxValue = parseInt(lines.shift());         // get the brightness maxValue 
+            
+            svg += '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n';
+            svg += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">\n';
+
+            var picInfo = lines.join(' ').split(/\s+/);
+
+            for (var y = 0; y < height; y++) { 
+                for (var x = 0; x < width; x++) {
+                    
+                    var currIndex = width * y + x;
+                    
+                    // check if in range. If not, set default values
+                    if(currIndex >= picInfo.length) {
+                        var pixelVal = 255;
+                    }
+                    else {
+                        var pixelVal = Math.round((parseInt(picInfo[currIndex]) / maxValue) * 255);
+                    }
+
+                    var newRect = '<rect x="' + x +'" y="' + y + '" width="1" height="1" fill="rgb(' + pixelVal + ',' + pixelVal + ',' + pixelVal + ')"/>\n'
+                    svg += newRect;
+                }
+            }
+
+            svg += '</svg>';
+            
+            break;
+        case 'image/x-portable-pixmap':
+            var cleanFile = preprocessFile(rawFile);
+            console.log(cleanFile);
+
+            var lines = cleanFile.split('\n');              // split lines into array
+            lines.shift();                                  // remove header (P3)
+            var dimensions = lines.shift().split(' ');      // get the dimensions
+            var width = parseInt(dimensions[0]);            // get width from dimension
+            var height = parseInt(dimensions[1]);           // get height from dimension
+            var maxValue = parseInt(lines.shift());         // get the brightness maxValue 
+            
+            svg += '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n';
+            svg += '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">\n';
+
+            var picInfo = lines.join(' ').split(/\s+/);
+
+            for (var y = 0; y < height; y++) { 
+                for (var x = 0; x < width; x++) {
+                    
+                    var currIndex = (width * y + x) * 3;
+                    
+                    // check if in range. If not, set default values
+                    if(currIndex >= picInfo.length) {
+                        var pixelVal = 255;
+                        var r = pixelVal;
+                        var g = pixelVal;
+                        var b = pixelVal;
+                    }
+                    else {
+                        var r = Math.round((parseInt(picInfo[currIndex]) / maxValue) * 255);
+                        var g = Math.round((parseInt(picInfo[currIndex + 1]) / maxValue) * 255);
+                        var b = Math.round((parseInt(picInfo[currIndex + 2]) / maxValue) * 255);
+                    }
+
+                    var newRect = '<rect x="' + x +'" y="' + y + '" width="1" height="1" fill="rgb(' + r + ',' + g + ',' + b + ')"/>\n'
+                    svg += newRect;
+                }
+            }
+
+            svg += '</svg>';
+
+            break;
+        case 'image/svg+xml':
+            svg = rawFile;
+        
+            if (!svg.includes('xmlns')) {
+                svg = svg.replace('<svg', '<svg xmlns="http://www.w3.org/2000/svg"');
+            }
+            
+            if (!svg.includes('<?xml')) {
+                svg = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n${svg}`;
+            }
+            break;
+        default:
+            break;
+    }
+    
+    return svg;
 }
 
 function getFileInfo(rawFile) {
@@ -59,7 +205,7 @@ function getFileInfo(rawFile) {
         fileInfo.type = 'image/x-portable-pixmap';
         fileInfo.extension = 'ppm';
     }  
-    else if(rawFile.startsWith('<svg')) {
+    else if(rawFile.startsWith('<svg') || rawFile.startsWith('<?xml') && rawFile.includes('<svg')) {
         fileInfo.type = 'image/svg+xml';
         fileInfo.extension = 'svg';
     }
@@ -68,5 +214,55 @@ function getFileInfo(rawFile) {
     }  
 
     return fileInfo;
+}
+
+function display() {
     
+    let content = getContent();
+
+    if(content == -1) {
+        console.log('Format wurde nicht erkannt');
+        return;
+    }
+
+    let svgFile = transformToSvg(content.rawFile, content.fileInfo.type);
+
+    // DEPRECATED
+    // // make sure the SVGs height and width fit into our display container
+    // svgFile = svgFile.split('\n');
+    // for(let i = 0; i < svgFile.length; i++) {
+    //     if(svgFile[i].includes('<svg')) {
+    //         svgFile[i] = svgFile[i].replace(/height="(\d+)"/, '');
+    //         svgFile[i] = svgFile[i].replace(/width="(\d+)"/, '');
+    //     }
+    // }
+    // svgFile = svgFile.join('\n');
+
+    console.log(svgFile)
+
+    let display = document.querySelector('.ict-display');
+    display.innerHTML = svgFile;   
+}
+
+function toggleAutoRefresh(checkbox) {
+    
+    let textarea = document.querySelector('.ict-code');
+    
+    if(checkbox.checked) {
+        textarea.setAttribute('oninput', 'display()');
+    }
+    else {
+        textarea.setAttribute('oninput', '');
+    }
+}
+
+function preprocessFile(rawFile) {
+    
+    // this gets rid of comments after a '#'
+    let processedFile = rawFile.replace(/#[^\n]*/g, '');
+    
+    // this removes all empty lines
+    processedFile = processedFile.replace(/^\s*\n/gm, '');
+    
+    return processedFile;
 }
