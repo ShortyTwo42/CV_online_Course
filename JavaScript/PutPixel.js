@@ -1,5 +1,6 @@
 let width;
 let height;
+let myPic;
 
 document.addEventListener('DOMContentLoaded', function() {
     resetToDefault();
@@ -7,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function resetToDefault() {
     
-    width = 100;
-    height = 100;
+    width = 10;
+    height = 10;
 
     document.getElementById('ict-fileWidth').value = width;
     document.getElementById('ict-fileHeight').value = height;
@@ -16,7 +17,9 @@ function resetToDefault() {
     let defaultCode = ''
     defaultCode += 'for (let y = 0; y < height; y++) {\n'
     defaultCode += '\tfor (let x = 0; x < width; x++) {\n'
-    defaultCode += '\t\tconsole.log("hello World");\n'
+    defaultCode += '\t\tif (x == y) {\n'
+    defaultCode += '\t\t\tputPixel(x, y);\n'
+    defaultCode += '\t\t}\n'
     defaultCode += '\t}\n'
     defaultCode += '}'
 
@@ -27,14 +30,80 @@ function resetToDefault() {
     // trigger 'keyup' event to have code enumeration
     const event = new KeyboardEvent('keyup', {});
     textarea.dispatchEvent(event);
+
+    tryExecuteCode();
 }
 
-function execudeCode() {
-    console.log('do something');
+function tryExecuteCode() {
+    try {
+        executeCode();
+    } catch {
+        console.log('something went wrong!');
+    }
+}
+
+function executeCode() {
+
+    let numRows = height; // Number of rows
+    let numCols = width; // Number of columns
+    
+    // reset myPic as 2d array
+    myPic = Array.from({ length: numRows }, () => Array(numCols).fill([255, 255, 255]));
+
+    //console.log(myPic);
+
+    let code = document.querySelector('.ict-code').value;
+
+    eval(code);
+
+    let svgFile = createSVG();
+
+    let display = document.querySelector('.ict-display');
+    display.innerHTML = svgFile; 
 }
 
 function updateOutput() {
-    width = document.getElementById('ict-fileWidth').value;
-    height = document.getElementById('ict-fileHeight').value;
-    execudeCode();
+    width = parseInt(document.getElementById('ict-fileWidth').value);
+    height = parseInt(document.getElementById('ict-fileHeight').value);
+    tryExecuteCode();
+}
+
+function putPixel(x, y, rgb = null) {
+    
+    if (0 <= x < width && 0 <= y < height) {
+
+        let color = [0, 0, 0];
+        
+        // if rgb is null set color to black
+        if (Number.isInteger(rgb)) {
+            color = [rgb, rgb, rgb];
+        }
+        else if (Array.isArray(rgb) && !rgb.some(i => !Number.isInteger(i)) && rgb.length == 1) {
+            color = [rgb[0], rgb[0], rgb[0]];
+        }
+        else if (Array.isArray(rgb) && !rgb.some(i => !Number.isInteger(i)) && rgb.length == 3) {
+            color = rgb;
+        }
+
+        myPic[y][x] = color;
+    }
+}
+
+function createSVG() {
+    
+    let svg =   '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n';
+    svg +=      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">\n';
+
+    for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+            let r = myPic[y][x][0];
+            let g = myPic[y][x][1];
+            let b = myPic[y][x][2];
+
+            let newRect = '<rect x="' + x +'" y="' + y + '" width="1" height="1" fill="rgb(' + r + ',' + g + ',' + b + ')"/>\n';
+            svg += newRect;
+        }
+    }
+
+    return svg;
 }
