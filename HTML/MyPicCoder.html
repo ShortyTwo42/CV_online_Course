@@ -12,6 +12,14 @@
                 <h1>
                     MyPicCoder
                 </h1>
+                <div class="ict-subHeader">
+                    <div class="ict-subHeaderItem">
+                        <label for="ict-fileName">
+                            Dateiname
+                        </label>
+                        <input id="ict-fileName" value="Bild"></input>
+                    </div>
+                </div>
                 <div class="ict-menu">
                     <button onclick="tryFileDownload()">
                         <i class="fa-solid fa-floppy-disk fa-2xl"></i>
@@ -32,7 +40,7 @@
                         <i class="fa-solid fa-arrow-left fa-2xl"></i>
                     </button>
                     <button onclick="display()" title="Lade Preview" class="float-right">
-                        <i class="fa-solid fa-rotate-right fa-2xl"></i>
+                        <i class="fa-solid fa-code fa-2xl"></i>
                     </button>
                     <label class="ict-switch float-right" title="Live Preview">
                         <input type="checkbox" onchange="toggleAutoRefresh(this)" checked>

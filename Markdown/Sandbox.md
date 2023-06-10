@@ -35,5 +35,3 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 ??[MyPicCoder](../HTML/MyPicCoder.html)
 
 
-??[MyPicCoder](../HTML/MyPicCoder.html)
-

@@ -16,6 +16,14 @@ document.addEventListener('DOMContentLoaded', function(){
         textarea.style.minHeight = newHeight;
         editor.style.minHeight = newHeight;
     });
+
+    // prevent 'tab' press from jumping to next input and do normal tab instead
+    textarea.onkeydown = function(e) {
+        if (e.keyCode === 9) {
+            this.setRangeText('\t', this.selectionStart, this.selectionStart, 'end');
+            return false;
+        }
+    }
 });
 
 // Dealing with Textarea Height

@@ -22,9 +22,13 @@ function downloadFile() {
 
     let url = window.URL.createObjectURL(blob);
 
+    let fileName = document.getElementById('ict-fileName').value.trim().replace(/[\\\/:*?"<>|]/g, '');
+    fileName = fileName == '' ? 'Bild.' : fileName + '.';
+
+
     let link = document.createElement('a');
     link.href = url;
-    link.download = 'file.' + content.fileInfo.extension;
+    link.download = fileName + content.fileInfo.extension;
 
     document.body.appendChild(link);
     link.click();
@@ -227,18 +231,7 @@ function display() {
 
     let svgFile = transformToSvg(content.rawFile, content.fileInfo.type);
 
-    // DEPRECATED
-    // // make sure the SVGs height and width fit into our display container
-    // svgFile = svgFile.split('\n');
-    // for(let i = 0; i < svgFile.length; i++) {
-    //     if(svgFile[i].includes('<svg')) {
-    //         svgFile[i] = svgFile[i].replace(/height="(\d+)"/, '');
-    //         svgFile[i] = svgFile[i].replace(/width="(\d+)"/, '');
-    //     }
-    // }
-    // svgFile = svgFile.join('\n');
-
-    console.log(svgFile)
+    //console.log(svgFile);
 
     let display = document.querySelector('.ict-display');
     display.innerHTML = svgFile;   
