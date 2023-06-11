@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
         lineNumbers.innerHTML = Array(numberOfLines).fill('<span></span>').join('');
         let newWidth = calcWidth(textarea.value);
         textarea.style.minWidth = newWidth + 'ch';
-        editor.style.minWidth = (newWidth + 6)  + 'ch';
+        editor.style.minWidth = (newWidth + 6) + 'ch';
 
         let newHeight = calcHeight(textarea.value) + 'rem';
         textarea.style.minHeight = newHeight;

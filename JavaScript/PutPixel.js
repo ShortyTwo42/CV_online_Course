@@ -28,7 +28,7 @@ function resetToDefault() {
     textarea.innerHTML = defaultCode;
 
     // trigger 'keyup' event to have code enumeration
-    const event = new KeyboardEvent('keyup', {});
+    let event = new KeyboardEvent('keyup', {});
     textarea.dispatchEvent(event);
 
     tryExecuteCode();

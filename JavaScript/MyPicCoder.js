@@ -1,5 +1,29 @@
 function uploadFile() {
-    console.log('ToDo');
+    let file = document.getElementById('file-upload').files[0];
+    
+    if(file) {
+        let reader = new FileReader();
+
+        // define what should be done with the raw text once it is read
+        reader.onload = function(e) {
+            let content = e.target.result;
+
+            let textarea = document.querySelector('.ict-code');
+            textarea.innerHTML = content;
+
+            // trigger 'keyup' event to have code enumeration
+            let event = new KeyboardEvent('keyup', {});
+            textarea.dispatchEvent(event);
+
+            display();
+        }
+
+        reader.readAsText(file);
+        // cuts off file extension
+        let fileName = file.name.split('.').slice(0, -1).join('.');
+        document.getElementById('ict-fileName').value = fileName;
+
+    }
 }
    
 function downloadFile() {
@@ -23,7 +47,7 @@ function downloadFile() {
     let url = window.URL.createObjectURL(blob);
 
     let fileName = document.getElementById('ict-fileName').value.trim().replace(/[\\\/:*?"<>|]/g, '');
-    fileName = fileName == '' ? 'Bild.' : fileName + '.';
+    fileName = (fileName == '') ? 'Bild.' : fileName + '.';
 
 
     let link = document.createElement('a');
