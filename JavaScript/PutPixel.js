@@ -1,5 +1,5 @@
-let width;
-let height;
+let picture_width;
+let picture_height;
 let myPic;
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,15 +8,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function resetToDefault() {
     
-    width = 10;
-    height = 10;
+    picture_width = 10;
+    picture_height = 10;
 
-    document.getElementById('ict-fileWidth').value = width;
-    document.getElementById('ict-fileHeight').value = height;
+    document.getElementById('ict-fileWidth').value = picture_width;
+    document.getElementById('ict-fileHeight').value = picture_height;
 
     let defaultCode = ''
-    defaultCode += 'for (let y = 0; y < height; y++) {\n'
-    defaultCode += '\tfor (let x = 0; x < width; x++) {\n'
+    defaultCode += 'for (let y = 0; y < picture_height; y++) {\n'
+    defaultCode += '\tfor (let x = 0; x < picture_width; x++) {\n'
     defaultCode += '\t\tif (x == y) {\n'
     defaultCode += '\t\t\tputPixel(x, y);\n'
     defaultCode += '\t\t}\n'
@@ -25,7 +25,7 @@ function resetToDefault() {
 
     let textarea = document.querySelector('.ict-code');
 
-    textarea.innerHTML = defaultCode;
+    textarea.value = defaultCode;
 
     // trigger 'keyup' event to have code enumeration
     let event = new KeyboardEvent('keyup', {});
@@ -44,8 +44,8 @@ function tryExecuteCode() {
 
 function executeCode() {
 
-    let numRows = height; // Number of rows
-    let numCols = width; // Number of columns
+    let numRows = picture_height; // Number of rows
+    let numCols = picture_width; // Number of columns
     
     // reset myPic as 2d array
     myPic = Array.from({ length: numRows }, () => Array(numCols).fill([255, 255, 255]));
@@ -54,7 +54,9 @@ function executeCode() {
 
     let code = document.querySelector('.ict-code').value;
 
-    eval(code);
+    let userFunction = Function(code);
+    userFunction();
+    //eval(code);
 
     let svgFile = createSVG();
 
@@ -63,14 +65,14 @@ function executeCode() {
 }
 
 function updateOutput() {
-    width = parseInt(document.getElementById('ict-fileWidth').value);
-    height = parseInt(document.getElementById('ict-fileHeight').value);
+    picture_width = parseInt(document.getElementById('ict-fileWidth').value);
+    picture_height = parseInt(document.getElementById('ict-fileHeight').value);
     tryExecuteCode();
 }
 
 function putPixel(x, y, rgb = null) {
     
-    if (0 <= x < width && 0 <= y < height) {
+    if (0 <= x < picture_width && 0 <= y < picture_height) {
 
         let color = [0, 0, 0];
         
@@ -92,10 +94,10 @@ function putPixel(x, y, rgb = null) {
 function createSVG() {
     
     let svg =   '<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n';
-    svg +=      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + width + ' ' + height + '">\n';
+    svg +=      '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + picture_width + ' ' + picture_height + '">\n';
 
-    for (let y = 0; y < height; y++) {
-        for (let x = 0; x < width; x++) {
+    for (let y = 0; y < picture_height; y++) {
+        for (let x = 0; x < picture_width; x++) {
             let r = myPic[y][x][0];
             let g = myPic[y][x][1];
             let b = myPic[y][x][2];

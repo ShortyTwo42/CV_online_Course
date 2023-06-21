@@ -6,6 +6,10 @@ html, body {
     padding: 0;
 }
 
+html *, body * {
+    font-family: inherit;
+}
+
 .ict-range {
     background: #454545;
     color: #ffffff;
