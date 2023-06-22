@@ -31,7 +31,11 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 * Portable Pixmap (*.ppm)
 * Scalable Vector Graphics (*.svg)
 
-
 ??[MyPicCoder](../HTML/MyPicCoder.html)
+
+## PutPixel
+Das "PutPixel"-Tool wurde entwickelt, um den Teilnehmenden des Kurses die Möglichkeit zu geben mithilfe der Funktion "PutPixel()" For-Schleifen sowie If-Abfragen besser zu verstehen:
+
+??[PutPixel](../HTML/PutPixel.html)
 
 
