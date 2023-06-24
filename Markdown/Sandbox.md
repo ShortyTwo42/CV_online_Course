@@ -38,4 +38,9 @@ Das "PutPixel"-Tool wurde entwickelt, um den Teilnehmenden des Kurses die Mögli
 
 ??[PutPixel](../HTML/PutPixel.html)
 
+## MyPicFilter
+"MyPicFilter" wurde als Tool entwickelt um die Auswirkungen verschiedener Filter auf Eingabebilder zu verdeutlichen
+
+??[MyPicFilter](../HTML/MyPicFilter.html)
+
 

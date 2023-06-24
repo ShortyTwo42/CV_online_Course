@@ -1,28 +1,33 @@
 /* This part is just for visuals (adding line numbers, adjusting textarea height, ...) */
 // add line numbers to our editor
 document.addEventListener('DOMContentLoaded', function(){
-    const editor = document.querySelector('.ict-editor');
-    const textarea = document.querySelector('.ict-code');
-    const lineNumbers = document.querySelector('.ict-lineNumbers');
+    try {
+        const editor = document.querySelector('.ict-editor');
+        const textarea = document.querySelector('.ict-code');
+        const lineNumbers = document.querySelector('.ict-lineNumbers');
 
-    textarea.addEventListener('keyup', event => {
-        const numberOfLines = event.target.value.split('\n').length;
-        lineNumbers.innerHTML = Array(numberOfLines).fill('<span></span>').join('');
-        let newWidth = calcWidth(textarea.value);
-        textarea.style.minWidth = newWidth + 'ch';
-        editor.style.minWidth = (newWidth + 6) + 'ch';
+        textarea.addEventListener('keyup', event => {
+            const numberOfLines = event.target.value.split('\n').length;
+            lineNumbers.innerHTML = Array(numberOfLines).fill('<span></span>').join('');
+            let newWidth = calcWidth(textarea.value);
+            textarea.style.minWidth = newWidth + 'ch';
+            editor.style.minWidth = (newWidth + 6) + 'ch';
 
-        let newHeight = calcHeight(textarea.value) + 'rem';
-        textarea.style.minHeight = newHeight;
-        editor.style.minHeight = newHeight;
-    });
+            let newHeight = calcHeight(textarea.value) + 'rem';
+            textarea.style.minHeight = newHeight;
+            editor.style.minHeight = newHeight;
+        });
 
-    // prevent 'tab' press from jumping to next input and do normal tab instead
-    textarea.onkeydown = function(e) {
-        if (e.keyCode === 9) {
-            this.setRangeText('\t', this.selectionStart, this.selectionStart, 'end');
-            return false;
+        // prevent 'tab' press from jumping to next input and do normal tab instead
+        textarea.onkeydown = function(e) {
+            if (e.keyCode === 9) {
+                this.setRangeText('\t', this.selectionStart, this.selectionStart, 'end');
+                return false;
+            }
         }
+    } 
+    catch {
+
     }
 });
 

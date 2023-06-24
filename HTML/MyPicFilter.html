@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../CSS/fontawesome/css/all.min.css">               <!-- keep this for fontawesome icons (save, load, ...) -->
+        <link rel="stylesheet" href="../CSS/InteractiveCodingTemplate.css">             <!-- keep this for the representation of the tool -->
+        <link rel="stylesheet" href="../CSS/MyPicFilter.css">  
+        <script src="../JavaScript/InteractiveCodingTemplate.js"></script>              <!-- keep this for the basic javascript functionalities -->
+        <script src="../JavaScript/MyPicFilter.js"></script>
+    </head>
+    <body>   
+        <div class="ict-range">
+            <div class="ict-header">
+                <h1>
+                    MyPicFilter
+                </h1>
+                <div class="ict-menu">
+                    <button onclick="tryFileDownload()">
+                        <i class="fa-solid fa-floppy-disk fa-2xl"></i>
+                    </button>
+                    <button>
+                        <label for="file-upload" class="file_upload_label">
+                            <i class="fa-solid fa-folder-open fa-2xl"></i>
+                        </label>
+                        <input type="file" id="file-upload" accept="image/x-portable-graymap, image/x-portable-pixmap" class="file_uploader" onchange="tryFileUpload()"/>  
+                    </button>
+                    <button onclick="toggleView('100%', '0%')" title="Original maximieren">
+                        <i class="fa-solid fa-arrow-right fa-2xl"></i>
+                    </button>
+                    <button onclick="toggleView('50%', '50%')" title="Split Screen">
+                        <i class="fa-solid fa-arrows-left-right fa-2xl"></i>
+                    </button>
+                    <button onclick="toggleView('0%', '100%')" title="Gefiltertes Bild maximieren">
+                        <i class="fa-solid fa-arrow-left fa-2xl"></i>
+                    </button>
+                    <button onclick="applyFilter()" title="Filter anwenden">
+                        <i class="fa-solid fa-code fa-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="ict-content">
+                <div class="ict-codingSpace">
+                    <div class="ict-wrapper">
+                        <canvas id="original_img" class="fill_width">
+                            
+                        </canvas>
+                    </div>
+                </div>
+                <div class="ict-previewSpace">
+                    <div class="ict-wrapper">
+                        <canvas id="filtered_img" class="fill_width">
+                            
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
