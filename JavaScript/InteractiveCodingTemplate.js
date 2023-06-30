@@ -93,3 +93,35 @@ function tryFileDownload() {
         console.log('"downloadFile()" function is not yet implemented! \n Please implement it in your own Javascript.');
     }
 }
+
+function decreaseNumber(id) {
+    const number_input = document.getElementById(id);
+    const curr_value = parseInt(number_input.value);
+    const min_value = parseInt(number_input.min);
+
+    const new_value = (curr_value - 1 < min_value) ? min_value : curr_value - 1;
+    number_input.value = new_value;
+
+    try {
+        handleDecrease(id);
+    }
+    catch{
+
+    }
+}
+
+function increaseNumber(id) {
+    const number_input = document.getElementById(id);
+    const curr_value = parseInt(number_input.value);
+    const max_value = parseInt(number_input.max);
+
+    const new_value = (curr_value + 1 > max_value) ? max_value : curr_value + 1;
+    number_input.value = new_value;
+
+    try {
+        handleIncrease(id);
+    }
+    catch{
+
+    }
+}
