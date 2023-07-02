@@ -58,23 +58,42 @@
                 <div class="filter_menu" style="display: none">
                     <div class="range_container">
                         <div class="range">
-                            <label for="filter_type">
-                                Wähle einen Filter aus
-                            </label>
-                            <select id="filter_type" onchange="selectNewFilter(this)">
-                                <option value="none">
-                                    Kein Filter
-                                </option>
-                                <option value="median">
-                                    Median-Filter
-                                </option>
-                                <option value="mean">
-                                    Mittelwert-Filter
-                                </option>
-                                <option value="gaussian">
-                                    Gauß-Filter
-                                </option>
-                            </select> 
+                            <div class="range_item">
+                                <label for="filter_type">
+                                    Filter:
+                                </label>
+                                <select id="filter_type" onchange="selectNewFilter(this)">
+                                    <option value="none">
+                                        Kein Filter
+                                    </option>
+                                    <option value="median">
+                                        Median-Filter
+                                    </option>
+                                    <option value="mean">
+                                        Mittelwert-Filter
+                                    </option>
+                                    <option value="gaussian">
+                                        Gauß-Filter
+                                    </option>
+                                </select> 
+                            </div>
+
+                            <div class="range_item">
+                                <label for="border_treatment">
+                                    Randbehandlung:
+                                </label>
+                                <select id="border_treatment">
+                                    <option value="none">
+                                        Keine Randbehandlung
+                                    </option>
+                                    <option value="repeat">
+                                        Äußeres Pixel wiederholen
+                                    </option>
+                                    <option value="mirror">
+                                        Pixel spiegeln
+                                    </option>
+                                </select> 
+                            </div>
                         </div>
                         <div id="none_tab" class="range tab">
                             <div class="ict-wrapper no-xScroll">

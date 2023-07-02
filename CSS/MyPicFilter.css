@@ -20,6 +20,13 @@
     border-radius: 0.5rem;
     border-width: thin;
     border-color: var(--mine_shaft);
+
+    display: flex;
+    flex-direction: row;
+}
+
+.range_item {
+    flex: 45%;
 }
 
 .tab {
@@ -39,5 +46,12 @@
     max-width: 15rem;
 }
 
-
+@media (max-width: 800px) {
+    .range {
+        flex-direction: column;
+    }
+    .range_item {
+        flex: 100%;
+    }
+}
 

@@ -22,7 +22,7 @@ script:     ../JavaScript/LiaScriptCustom.js
 
 # Sandbox
 Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
-(Auf Github hochgeladen)
+(Lokal zum erstellen und Testen)
  
 ## MyPicCoder
 Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es können folgende Grafikdateien erstellt werden:
@@ -32,16 +32,16 @@ Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es könn
 * Portable Pixmap (*.ppm)
 * Scalable Vector Graphics (*.svg)
 
-??[MyPicCoder](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicCoder.html)
+??[MyPicCoder](../HTML/MyPicCoder.html)
 
 ## PutPixel
 Das "PutPixel"-Tool wurde entwickelt, um den Teilnehmenden des Kurses die Möglichkeit zu geben mithilfe der Funktion "PutPixel()" For-Schleifen sowie If-Abfragen besser zu verstehen:
 
-??[PutPixel](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/PutPixel.html)
+??[PutPixel](../HTML/PutPixel.html)
 
 ## MyPicFilter
 "MyPicFilter" wurde als Tool entwickelt um die Auswirkungen verschiedener Filter auf Eingabebilder zu verdeutlichen
 
-??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicFilter.html)
+??[MyPicFilter](../HTML/MyPicFilter.html)
 
 

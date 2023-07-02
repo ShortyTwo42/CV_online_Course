@@ -213,7 +213,7 @@ function applyMedian(canvas) {
     filteredPicture = structuredClone(currentPicture);
 
     const radius = parseInt(document.getElementById('median_radius').value);
-    const border_treatment = 'none'; //repeat, mirror
+    const border_treatment = document.getElementById('border_treatment').value;
 
     for (let x = 0; x < currentPicture.width; x++) {
         for (let y = 0; y < currentPicture.height; y++) {
@@ -299,11 +299,40 @@ function applyMedian(canvas) {
 
 function applyMean(canvas) {
     filteredPicture = structuredClone(currentPicture);
-    alert('Not yet implemented');
+
+    const length = parseInt(document.getElementById('mean_radius').value) * 2 + 1;
+    const kernel = Array(length).fill(1);
+    const kernel_divisor = kernel.length;
+    const border_treatment = document.getElementById('border_treatment').value;
+
+    let tmp_img = convolve1D(currentPicture.image, kernel, kernel_divisor, 'horizontal', border_treatment);
+    filteredPicture.image = convolve1D(tmp_img, kernel, kernel_divisor, 'vertical', border_treatment);
+
+    if (currentPicture.type == 'pgm') {
+        pgmToCanvas(canvas, filteredPicture);
+    }
+    else if (currentPicture.type == 'ppm') {
+        ppmToCanvas(canvas, filteredPicture);
+    }
 }
 
-function applyGaussian(canvas) {
-    alert('Not yet implemented');
+function applyGaussian(canvas) { 
+    filteredPicture = structuredClone(currentPicture);
+
+    const length = parseInt(document.getElementById('gaussian_radius').value) * 2 + 1;
+    const kernel = pascal_triangle(length);
+    const kernel_divisor = kernel.reduce(function(a, b) { return a + b;} );
+    const border_treatment = document.getElementById('border_treatment').value;
+
+    let tmp_img = convolve1D(currentPicture.image, kernel, kernel_divisor, 'horizontal', border_treatment);
+    filteredPicture.image = convolve1D(tmp_img, kernel, kernel_divisor, 'vertical', border_treatment);
+
+    if (currentPicture.type == 'pgm') {
+        pgmToCanvas(canvas, filteredPicture);
+    }
+    else if (currentPicture.type == 'ppm') {
+        ppmToCanvas(canvas, filteredPicture);
+    }
 }
 
 // get x index for current filter
@@ -321,7 +350,7 @@ function get_x(i, border_treatment) {
                 break;
             case 'mirror':
                 let tmp = i * -1;
-                x = (i >= currentPicture.width) ? currentPicture.width - 1 : tmp;
+                x = (tmp >= currentPicture.width) ? currentPicture.width - 1 : tmp;
                 break;
         }
     }
@@ -334,8 +363,8 @@ function get_x(i, border_treatment) {
                 x = currentPicture.width - 1;
                 break;
             case 'mirror':
-                let tmp = currentPicture.width - (i - currentPicture.width);
-                x = (i < 0) ? 0 : tmp;
+                let tmp = (currentPicture.width - 1) - (i - (currentPicture.width - 1));
+                x = (tmp < 0) ? 0 : tmp;
                 break;
         }
     }
@@ -361,7 +390,7 @@ function get_y(j, border_treatment) {
                 break;
             case 'mirror':
                 let tmp = j * -1;
-                y = (j >= currentPicture.height) ? currentPicture.height - 1 : tmp;
+                y = (tmp >= currentPicture.height) ? currentPicture.height - 1 : tmp;
                 break;
         }
     }
@@ -374,8 +403,8 @@ function get_y(j, border_treatment) {
                 y = currentPicture.height - 1;
                 break;
             case 'mirror':
-                let tmp = currentPicture.height - (j - currentPicture.height);
-                y = (j < 0) ? 0 : tmp;
+                let tmp = (currentPicture.height - 1) - (j - (currentPicture.height - 1));
+                y = (tmp < 0) ? 0 : tmp;
                 break;
         }
     }
@@ -384,6 +413,126 @@ function get_y(j, border_treatment) {
     }
 
     return y;   
+}
+
+function convolve1D(input_img, kernel, kernel_divisor, direction, border_treatment) {
+
+    let return_img = structuredClone(input_img);
+
+    const radius = (kernel.length - 1) / 2;
+
+    for (let x = 0; x < currentPicture.width; x++) {
+        for (let y = 0; y < currentPicture.height; y++) {
+
+            let no_border_treatment = false;
+            let new_value = 0;
+            if (currentPicture.type == 'ppm') {
+                new_value = {};
+                new_value.r = 0;
+                new_value.g = 0;
+                new_value.b = 0;
+            }
+
+            let kernel_index = 0;
+            switch (direction) {
+                case 'horizontal':
+                    for (let i = x - radius; i <= x + radius; i++) {
+                        let x_index = get_x(i, border_treatment);
+        
+                        // early termination when no border treatment is applied
+                        if (x_index == -1) {
+                            i = x + radius
+                            no_border_treatment = true;
+                        }
+                        else {
+                            switch (currentPicture.type) {
+                                case 'pgm':
+                                    new_value += input_img[y][x_index] * kernel[kernel_index];
+                                    break;
+                                case 'ppm':
+                                    new_value.r += input_img[y][x_index][0] * kernel[kernel_index];
+                                    new_value.g += input_img[y][x_index][1] * kernel[kernel_index];
+                                    new_value.b += input_img[y][x_index][2] * kernel[kernel_index];
+                                    break;
+                            }
+                        }
+                        kernel_index++; 
+                    }
+                    break;
+                case 'vertical':
+                    for (let j = y - radius; j <= y + radius; j++) {
+                        let y_index = get_y(j, border_treatment);
+        
+                        // early termination when no border treatment is applied
+                        if (y_index == -1) {
+                            j = y + radius
+                            no_border_treatment = true;
+                        }
+                        else {
+                            switch (currentPicture.type) {
+                                case 'pgm':
+                                    new_value += input_img[y_index][x] * kernel[kernel_index];
+                                    break;
+                                case 'ppm':
+                                    new_value.r += input_img[y_index][x][0] * kernel[kernel_index];
+                                    new_value.g += input_img[y_index][x][1] * kernel[kernel_index];
+                                    new_value.b += input_img[y_index][x][2] * kernel[kernel_index];
+                                    break;
+                            }
+                        }
+                        kernel_index++; 
+                    }
+                    break;
+            }
+
+            if (no_border_treatment) {
+                switch (currentPicture.type) {
+                    case 'pgm':
+                        return_img[y][x] = 0;
+                        break;
+                    case 'ppm':
+                        return_img[y][x][0] = 0;
+                        return_img[y][x][1] = 0;
+                        return_img[y][x][2] = 0;
+                        break;
+                }
+            } else {
+                switch (currentPicture.type) {
+                    case 'pgm':
+                        // divide by divisor to normalize the new value
+                        return_img[y][x] = new_value / kernel_divisor;
+                        break;
+                    case 'ppm':
+                        // divide by divisor to normalize the new values
+                        return_img[y][x][0] = new_value.r / kernel_divisor;
+                        return_img[y][x][1] = new_value.g / kernel_divisor;
+                        return_img[y][x][2] = new_value.b / kernel_divisor;
+                        break;
+                }
+            }  
+        }
+    }
+
+    return return_img;
+}
+
+function pascal_triangle(length) {
+
+    // to get an array of length n we look at row = lenght - 1
+    let row = length - 1;
+
+    // init prev element and return array
+    let prevElem = 1;
+    let return_array = [];
+    return_array.push(prevElem);
+
+    for (let i = 1; i <= row; i++) {
+        let currElem = (prevElem * (row - i + 1)) / i;
+        return_array.push(currElem);
+        prevElem = currElem;
+    }
+
+    return return_array;
 }
 
 function toggleFilterMenu() {
