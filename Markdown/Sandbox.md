@@ -3,7 +3,7 @@ author:     Leon Endris
 
 email:      leendris@uni-koblenz.de
 
-version:    0.0.1
+version:    0.1.0
 
 language:   de
 

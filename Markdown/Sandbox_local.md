@@ -3,7 +3,7 @@ author:     Leon Endris
 
 email:      leendris@uni-koblenz.de
 
-version:    0.0.1
+version:    0.1.0
 
 language:   de
 
@@ -25,7 +25,7 @@ Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
 (Lokal zum erstellen und Testen)
  
 ## MyPicCoder
-Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt. Es können folgende Grafikdateien erstellt werden:
+Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt.L Es können folgende Grafikdateien erstellt werden:
 
 * Portable Bitmap (*.pbm)
 * Portable Greymap (*.pgm)
