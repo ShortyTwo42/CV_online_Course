@@ -22,7 +22,7 @@ script:     ../JavaScript/LiaScriptCustom.js
 
 # Sandbox
 Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
-(Lokal zum erstellen und Testen)
+(Lokal zum Erstellen und Testen)
  
 ## MyPicCoder
 Der "MyPicCoder" wurde als Alternative zum Tool "CodeMyPic" entwickelt.L Es können folgende Grafikdateien erstellt werden:
@@ -43,5 +43,10 @@ Das "PutPixel"-Tool wurde entwickelt, um den Teilnehmenden des Kurses die Mögli
 "MyPicFilter" wurde als Tool entwickelt um die Auswirkungen verschiedener Filter auf Eingabebilder zu verdeutlichen
 
 ??[MyPicFilter](../HTML/MyPicFilter.html)
+
+## MyTerrainCreator
+"MyTerrainCreator" wurde als Tool entwickelt um interaktiv Heightmaps zu erstellen und direkt die Auswirkung auf ein virtuelles Terrain zu erkennen
+
+??[MyPicFilter](../HTML/MyTerrainCreator.html)
 
 
