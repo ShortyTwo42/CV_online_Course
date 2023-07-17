@@ -5,17 +5,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 /////////////////////////////////////////////////////////////////// Drawing App ///////////////////////////////////////////////////////////////////
+let active_type = null;
+let active_canvas = null;
+let active_ctx = null;
+
 let heightmap = null;
-let ctx = null;
+let heightmap_ctx = null;
+
+let texturemap = null;
+let texturemap_ctx = null;
+
+let canvasContainer = null;
 let myTerrainMenu = null;
-let heightmapContainer = null;
 
 // Set up initial variables
-let lastheightmapX = 0;
-let lastheightmapY = 0;
+let lastHeightmapX = 0;
+let lastHeightmapY = 0;
+let lastTexturemapX = 0;
+let lastTexturemapY = 0;
 let isDrawing = false;
 let brushSize = 25;
-let history = [];
+let heightmapHistory = [];
+let texturemapHistory = [];
 
 // for zooming and panning
 const minZoom = 0.1;
@@ -27,41 +38,44 @@ let lastMouseY = 0;
 
 // UI Elements
 let menuButton = null;
+let heightmapMode = null;
+let heightmapColorDiv = null;
 let heightColorInput = null;
 let heightColorPreview = null;
+let texturemapMode = null;
+let texturemapColorDiv = null;
+let textureColorInput = null;
 let opacityInput = null;
 let brushSizeInput = null;
 let falloffCheckbox = null;
 let undoButton = null;
 let redoButton = null;
 let eraserButton = null;
+let texturemapButton = null;
 
 
 function initDrawingApp() {
+    //////////////////////////////////// heightmap ////////////////////////////////////
     // Set the heightmap and its context
     heightmap = document.getElementById('heightmap');
-    ctx = heightmap.getContext('2d');
+    heightmap_ctx = heightmap.getContext('2d');
 
     // set width and height display
     document.getElementById('ict-fileWidth').value = heightmap.width;
     document.getElementById('ict-fileHeight').value = heightmap.height;
     
     // make the background black initially
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, heightmap.width, heightmap.height);
+    heightmap_ctx.fillStyle = '#000000';
+    heightmap_ctx.fillRect(0, 0, heightmap.width, heightmap.height);
 
     // init brush parameters
-    ctx.strokeStyle = '#ffffff'; // init as white
-    ctx.lineWidth = brushSize;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+    heightmap_ctx.strokeStyle = '#ffffff'; // init as white
+    heightmap_ctx.lineWidth = brushSize;
+    heightmap_ctx.lineCap = 'round';
+    heightmap_ctx.lineJoin = 'round';
     
     // set some additional parameters
-    ctx.imageSmoothingEnabled = true;
-
-    // Get view elemets
-    myTerrainMenu = document.querySelector('.my_terrain_menu');
-    heightmapContainer = document.querySelector('.heightmap_container');
+    heightmap_ctx.imageSmoothingEnabled = true;
 
     // Set up event listeners
     heightmap.addEventListener('mousedown', startDrawing);
@@ -69,34 +83,86 @@ function initDrawingApp() {
     heightmap.addEventListener('mouseup', stopDrawing);
     heightmap.addEventListener('mouseout', stopDrawingOnLeave);
     heightmap.addEventListener('mouseover', startDrawingOnEnter);
+
+    //////////////////////////////////// texturemap ///////////////////////////////////
+    // Set the texturemap and its context
+    texturemap = document.getElementById('texturemap');
+    texturemap_ctx = texturemap.getContext('2d');
+
+    // set width and height display
+    document.getElementById('ict-fileWidth_texturemap').value = texturemap.width;
+    document.getElementById('ict-fileHeight_texturemap').value = texturemap.height;
     
+    // make the background white initially
+    texturemap_ctx.fillStyle = '#ffffff';
+    texturemap_ctx.fillRect(0, 0, texturemap.width, texturemap.height);
+
+    // init brush parameters
+    texturemap_ctx.strokeStyle = '#000000'; // init as black
+    texturemap_ctx.lineWidth = brushSize;
+    texturemap_ctx.lineCap = 'round';
+    texturemap_ctx.lineJoin = 'round';
+    
+    // set some additional parameters
+    texturemap_ctx.imageSmoothingEnabled = true;
+
+    // Set up event listeners
+    texturemap.addEventListener('mousedown', startDrawing);
+    texturemap.addEventListener('mousemove', draw);
+    texturemap.addEventListener('mouseup', stopDrawing);
+    texturemap.addEventListener('mouseout', stopDrawingOnLeave);
+    texturemap.addEventListener('mouseover', startDrawingOnEnter);
+
+    /////////////////////////////////////// UI ///////////////////////////////////////
+    // Get view elemets
+    myTerrainMenu = document.querySelector('.my_terrain_menu');
+    canvasContainer = document.querySelector('.canvas_container');
+
     // Set up zooming and panning
-    heightmapContainer.addEventListener('mousedown', startPanning);
-    heightmapContainer.addEventListener('mousemove', handlePanning);
-    heightmapContainer.addEventListener('mouseup', stopPanning);
-    heightmapContainer.addEventListener('mouseleave', stopPanningOnLeave);
-    heightmapContainer.addEventListener('wheel', handleZoom);
+    canvasContainer.addEventListener('mousedown', startPanning);
+    canvasContainer.addEventListener('mousemove', handlePanning);
+    canvasContainer.addEventListener('mouseup', stopPanning);
+    canvasContainer.addEventListener('mouseleave', stopPanningOnLeave);
+    canvasContainer.addEventListener('wheel', handleZoom);
     
     // Get UI elements
     menuButton = document.getElementById('menuButton');
+    heightmapMode = document.getElementById('heightmap_mode');
+    heightmapColorDiv = document.getElementById('heightmap_color_div');
     heightColorInput = document.getElementById('height_color');
     heightColorPreview = document.getElementById('height_color_preview');
+    texturemapMode = document.getElementById('texturemap_mode');
+    texturemapColorDiv = document.getElementById('texturemap_color_div');
+    textureColorInput = document.getElementById('texture_color');
     opacityInput = document.getElementById('opacity');
     brushSizeInput = document.getElementById('brushSize');
     falloffCheckbox = document.getElementById('falloff');
     undoButton = document.getElementById('undoButton');
     redoButton = document.getElementById('redoButton');
     eraserButton = document.getElementById('eraserButton');
+    texturemapButton = document.getElementById('texturemapButton');
 
     // Set up event listeners for UI elements
     menuButton.addEventListener('click', toggleSidebar);
     heightColorInput.addEventListener('input', updateColor);
+    textureColorInput.addEventListener('change', updateColor);
     opacityInput.addEventListener('input', updateOpacity);
     brushSizeInput.addEventListener('input', updateBrushSize);
     falloffCheckbox.addEventListener('change', updateFalloff);
     undoButton.addEventListener('click', undo);
     redoButton.addEventListener('click', redo);
     eraserButton.addEventListener('click', toggleEraser);
+    texturemapButton.addEventListener('click', toggleTexturemap);
+
+    // Set heightmap to current elements
+    active_type = 'heightmap';
+    active_canvas = heightmap;
+    active_ctx = heightmap_ctx;
+
+    // DEBUG
+    // active_type = 'texturemap';
+    // active_canvas = texturemap;
+    // active_ctx = texturemap_ctx;
 }
 
 // drawing functions
@@ -108,13 +174,29 @@ function startDrawing(e) {
 
         const mousePos = getMousePosition(e);
 
-        lastheightmapX = mousePos.x;
-        lastheightmapY = mousePos.y;
+        let lastX;
+        let lastY;
+        switch(active_type) {
+            case 'heightmap':
+                lastHeightmapX = mousePos.x;
+                lastHeightmapY = mousePos.y;
 
-        ctx.beginPath();
-        ctx.moveTo(lastheightmapX, lastheightmapY);
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
+                lastX = lastHeightmapX;
+                lastY = lastHeightmapY;
+                break;
+            case 'texturemap':
+                lastTexturemapX = mousePos.x;
+                lastTexturemapY = mousePos.y;
+
+                lastX = lastTexturemapX;
+                lastY = lastTexturemapY;
+                break;
+        }
+
+        active_ctx.beginPath();
+        active_ctx.moveTo(lastX, lastY);
+        active_ctx.lineTo(mousePos.x, mousePos.y);
+        active_ctx.stroke();
     }
     
     // history.push(ctx.getImageData(0, 0, heightmap.width, heightmap.height));
@@ -126,13 +208,29 @@ function draw(e) {
 
         const mousePos = getMousePosition(e);
 
-        ctx.beginPath();
-        ctx.moveTo(lastheightmapX, lastheightmapY);
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
+        let lastX;
+        let lastY;
+        switch(active_type) {
+            case 'heightmap':
+                lastX = lastHeightmapX;
+                lastY = lastHeightmapY;
 
-        lastheightmapX = mousePos.x;
-        lastheightmapY = mousePos.y;
+                lastHeightmapX = mousePos.x;
+                lastHeightmapY = mousePos.y;
+                break;
+            case 'texturemap':
+                lastX = lastTexturemapX;
+                lastY = lastTexturemapY;
+
+                lastTexturemapX = mousePos.x;
+                lastTexturemapY = mousePos.y;
+                break;
+        }
+
+        active_ctx.beginPath();
+        active_ctx.moveTo(lastX, lastY);
+        active_ctx.lineTo(mousePos.x, mousePos.y);
+        active_ctx.stroke();
     }
 }
 
@@ -159,22 +257,38 @@ function startDrawingOnEnter(e) {
 
         const mousePos = getMousePosition(e);
 
-        lastheightmapX = mousePos.x;
-        lastheightmapY = mousePos.y;
+        let lastX;
+        let lastY;
+        switch(active_type) {
+            case 'heightmap':
+                lastHeightmapX = mousePos.x;
+                lastHeightmapY = mousePos.y;
 
-        ctx.beginPath();
-        ctx.moveTo(lastheightmapX, lastheightmapY);
-        ctx.lineCap = "round";
-        ctx.lineJoin = "round";
-        ctx.lineTo(mousePos.x, mousePos.y);
-        ctx.stroke();
+                lastX = lastHeightmapX;
+                lastY = lastHeightmapY;
+                break;
+            case 'texturemap':
+                lastTexturemapX = mousePos.x;
+                lastTexturemapY = mousePos.y;
+
+                lastX = lastTexturemapX;
+                lastY = lastTexturemapY;
+                break;
+        }
+
+        active_ctx.beginPath();
+        active_ctx.moveTo(lastX, lastY);
+        active_ctx.lineCap = "round";
+        active_ctx.lineJoin = "round";
+        active_ctx.lineTo(mousePos.x, mousePos.y);
+        active_ctx.stroke();
     }
 }
 
 function getMousePosition(e) {
-    const rect = heightmap.getBoundingClientRect();
-    const scaleX = heightmap.width / rect.width;
-    const scaleY = heightmap.height / rect.height;
+    const rect = active_canvas.getBoundingClientRect();
+    const scaleX = active_canvas.width / rect.width;
+    const scaleY = active_canvas.height / rect.height;
     return {
         x: (e.clientX - rect.left) * scaleX,
         y: (e.clientY - rect.top) * scaleY
@@ -189,17 +303,21 @@ function handleZoom(e) {
     // makes sure our zoom stays inside its bounds
     currentZoom = Math.min(Math.max(currentZoom + delta, minZoom), maxZoom); 
     const zoomFactor = currentZoom / oldZoom;
-    const containerRect = heightmapContainer.getBoundingClientRect();
+    const containerRect = canvasContainer.getBoundingClientRect();
     const x = e.clientX - containerRect.left;
     const y = e.clientY - containerRect.top;
-    const heightmapX = x + heightmapContainer.scrollLeft;
-    const heightmapY = y + heightmapContainer.scrollTop;
-    const offsetX = heightmapX * zoomFactor - heightmapX;
-    const offsetY = heightmapY * zoomFactor - heightmapY;
-    heightmapContainer.scrollLeft += offsetX;
-    heightmapContainer.scrollTop += offsetY;
+    const canvasX = x + canvasContainer.scrollLeft;
+    const canvasY = y + canvasContainer.scrollTop;
+    const offsetX = canvasX * zoomFactor - canvasX;
+    const offsetY = canvasY * zoomFactor - canvasY;
+    canvasContainer.scrollLeft += offsetX;
+    canvasContainer.scrollTop += offsetY;
+
     heightmap.style.width = `${heightmap.width * currentZoom}px`;
     heightmap.style.height = `${heightmap.height * currentZoom}px`;
+    
+    texturemap.style.width = `${texturemap.width * currentZoom}px`;
+    texturemap.style.height = `${texturemap.height * currentZoom}px`;
 }
 
 function startPanning(e) {
@@ -219,8 +337,8 @@ function handlePanning(e) {
         const deltaY = e.clientY - lastMouseY;
         lastMouseX = e.clientX;
         lastMouseY = e.clientY;
-        heightmapContainer.scrollLeft -= deltaX;
-        heightmapContainer.scrollTop -= deltaY;
+        canvasContainer.scrollLeft -= deltaX;
+        canvasContainer.scrollTop -= deltaY;
     }
 }
 
@@ -246,13 +364,13 @@ function toggleSidebar() {
     switch(display) {
         case 'none':
             myTerrainMenu.style.display = '';
-            heightmapContainer.style.display = 'none';
+            canvasContainer.style.display = 'none';
             undoButton.disabled = true;
             redoButton.disabled = true;
             break;
         case '':
             myTerrainMenu.style.display = 'none';
-            heightmapContainer.style.display = '';
+            canvasContainer.style.display = '';
             undoButton.disabled = false;
             redoButton.disabled = false;
             break;
@@ -260,46 +378,62 @@ function toggleSidebar() {
 }
 
 function updateColor() {
-    const decVal = isNaN(parseInt(heightColorInput.value)) ? 0 : parseInt(heightColorInput.value);
-    const hexVal = (decVal.toString(16).length == 1) ? '0' + decVal.toString(16) : decVal.toString(16);
-    const col = '#' + hexVal + hexVal + hexVal;
-    
-    heightColorPreview.value = col;
 
-    let active = eraserButton.classList.contains('eraser_active');
-    if (!active) {
-        ctx.strokeStyle = col;
-        updateFalloff();
+    const active = eraserButton.classList.contains('active_elem');
+
+    switch(active_type) {
+        case 'heightmap':
+            const decVal = isNaN(parseInt(heightColorInput.value)) ? 0 : parseInt(heightColorInput.value);
+            const hexVal = (decVal.toString(16).length == 1) ? '0' + decVal.toString(16) : decVal.toString(16);
+            const grayscale = '#' + hexVal + hexVal + hexVal;
+            
+            heightColorPreview.value = grayscale;
+
+            if (!active) {
+                active_ctx.strokeStyle = grayscale;
+                updateFalloff();
+            }
+            break;
+        case 'texturemap':
+            const col = textureColorInput.value;
+
+            if (!active) {
+                active_ctx.strokeStyle = col;
+                updateFalloff();
+            }
+            break;
     }
+
+    
 }
 
 function updateOpacity() {
     const x = isNaN(parseFloat(opacityInput.value)) ? 0 : parseFloat(opacityInput.value) / 100;
     const y = Math.exp(6 * x - 6);
 
-    let active = eraserButton.classList.contains('eraser_active');
+    let active = eraserButton.classList.contains('active_elem');
     if (!active) {
-        ctx.globalAlpha = y;
+        active_ctx.globalAlpha = y;
     }
 }
 
 function updateBrushSize() {
     const brushSize = isNaN(parseFloat(brushSizeInput.value)) ? 0 : parseFloat(brushSizeInput.value);
-    ctx.lineWidth = brushSize;
+    active_ctx.lineWidth = brushSize;
 }
 
 // Function to update the color falloff
 function updateFalloff() {
     if (falloffCheckbox.checked) {
-        let active = eraserButton.classList.contains('eraser_active');
+        let active = eraserButton.classList.contains('active_elem');
         if (!active) {
-            ctx.shadowColor = heightColorPreview.value;
-            ctx.shadowBlur = brushSizeInput.value / 2;
-            ctx.lineWidth = 0;
+            active_ctx.shadowColor = heightColorPreview.value;
+            active_ctx.shadowBlur = brushSizeInput.value / 2;
+            active_ctx.lineWidth = 0;
         }
     } else {
-        ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-        ctx.shadowBlur = 0;
+        active_ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+        active_ctx.shadowBlur = 0;
         updateBrushSize();
     }
 }
@@ -308,21 +442,21 @@ function updateFalloff() {
 function undo() {
     if (history.length > 1) {
         history.pop();
-        ctx.putImageData(history[history.length - 1], 0, 0);
+        active_ctx.putImageData(history[history.length - 1], 0, 0);
     }
 }
 
 // Function to redo
 function redo() {
     if (history.length < 2) return;
-    ctx.putImageData(history.pop(), 0, 0);
+    active_ctx.putImageData(history.pop(), 0, 0);
 }
 
 function toggleEraser() {
-    let active = eraserButton.classList.contains('eraser_active');
+    const active = eraserButton.classList.contains('active_elem');
 
     if (active) {
-        eraserButton.classList.remove('eraser_active');
+        eraserButton.classList.remove('active_elem');
         
         // set brush parameters to current values
         updateColor();
@@ -330,13 +464,65 @@ function toggleEraser() {
         updateFalloff();
     }
     else {
-        eraserButton.classList.add('eraser_active');
+        eraserButton.classList.add('active_elem');
 
         // set brush parameters to current values
-        ctx.strokeStyle = '#000000';
-        ctx.shadowColor = 'rgba(0, 0, 0, 0)';
-        ctx.shadowBlur = 0;
-        ctx.globalAlpha = 1;
+        heightmap_ctx.strokeStyle = '#000000';
+        heightmap_ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+        heightmap_ctx.shadowBlur = 0;
+        heightmap_ctx.globalAlpha = 1;
+
+        texturemap_ctx.strokeStyle = '#ffffff';
+        texturemap_ctx.shadowColor = 'rgba(0, 0, 0, 0)';
+        texturemap_ctx.shadowBlur = 0;
+        texturemap_ctx.globalAlpha = 1;
+    }
+}
+
+function toggleTexturemap() {
+    const active = texturemapButton.classList.contains('active_elem');
+
+    if (active) {
+        texturemapButton.classList.remove('active_elem');
+        
+        heightmapMode.style.display = '';
+        texturemapMode.style.display = 'none';
+
+        heightmapColorDiv.style.display = '';
+        texturemapColorDiv.style.display = 'none';
+
+        heightmap.style.display = '';
+        texturemap.style.display = 'none';
+
+        active_canvas = heightmap;
+        active_ctx = heightmap_ctx;
+        active_type = 'heightmap';
+
+        // set brush parameters to current values
+        updateColor();
+        updateOpacity();
+        updateFalloff();
+    }
+    else {
+        texturemapButton.classList.add('active_elem');
+
+        heightmapMode.style.display = 'none';
+        texturemapMode.style.display = '';
+
+        heightmapColorDiv.style.display = 'none';
+        texturemapColorDiv.style.display = '';
+
+        heightmap.style.display = 'none';
+        texturemap.style.display = '';
+
+        active_canvas = texturemap;
+        active_ctx = texturemap_ctx;
+        active_type = 'texturemap';
+
+        // set brush parameters to current values
+        updateColor();
+        updateOpacity();
+        updateFalloff();
     }
 }
 
@@ -368,31 +554,420 @@ function handleIncrease(id) {
     }
 }
 
-function createNewHeightmap() {
-    // get information
-    const filename = document.getElementById('new_heightmap_name').value;
-    const heightmap_width = document.getElementById('new_heightmap_width').value;
-    const heightmap_height = document.getElementById('new_heightmap_height').value;
+function createNewCanvas() {
+    /////////////////////////////// create heightmap ///////////////////////////////
+    if(document.getElementById('create_new_heightmap').checked) {
+        // get information
+        const heightmap_filename = document.getElementById('new_heightmap_name').value;
+        const heightmap_width = document.getElementById('new_heightmap_width').value;
+        const heightmap_height = document.getElementById('new_heightmap_height').value;
 
-    let heightmap = document.getElementById('heightmap');
-    heightmap.width = heightmap_width;
-    heightmap.height = heightmap_height;
+        heightmap.width = heightmap_width;
+        heightmap.height = heightmap_height;
 
-    // set width, height and filename display
-    document.getElementById('ict-fileWidth').value = heightmap.width;
-    document.getElementById('ict-fileHeight').value = heightmap.height;
-    document.getElementById('ict-fileName').value = filename;
+        // set width, height and filename display
+        document.getElementById('ict-fileWidth').value = heightmap.width;
+        document.getElementById('ict-fileHeight').value = heightmap.height;
+        document.getElementById('ict-fileName').value = heightmap_filename;
 
-    // make the background black initially
-    ctx.fillStyle = '#000000';
-    ctx.fillRect(0, 0, heightmap.width, heightmap.height);   
+        // make the background black initially
+        heightmap_ctx.fillStyle = '#000000';
+        heightmap_ctx.fillRect(0, 0, heightmap.width, heightmap.height);  
+    }
 
-    // set brush parameters to current values
+    /////////////////////////////// create texturemap ///////////////////////////////
+    if(document.getElementById('create_new_texturemap').checked) {
+        // get information
+        const texturemap_filename = document.getElementById('new_texturemap_name').value;
+        const texturemap_width = document.getElementById('new_texturemap_width').value;
+        const texturemap_height = document.getElementById('new_texturemap_height').value;
+
+        texturemap.width = texturemap_width;
+        texturemap.height = texturemap_height;
+
+        // set width, height and filename display
+        document.getElementById('ict-fileWidth_texturemap').value = texturemap.width;
+        document.getElementById('ict-fileHeight_texturemap').value = texturemap.height;
+        document.getElementById('ict-fileName_texturemap').value = texturemap_filename;
+
+        // make the background black initially
+        texturemap_ctx.fillStyle = '#ffffff';
+        texturemap_ctx.fillRect(0, 0, texturemap.width, texturemap.height);  
+    }
+    
+    //////////////////// reset brush parameters to current values ///////////////////
     updateColor();
     updateOpacity();
     updateBrushSize();
     updateFalloff();
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+    heightmap_ctx.lineCap = 'round';
+    heightmap_ctx.lineJoin = 'round';
+    texturemap_ctx.lineCap = 'round';
+    texturemap_ctx.lineJoin = 'round';
 }
 
+function downloadFile() {
+    // get info
+    const image_type = document.getElementById('save_as').value;
+    const save_heightmap = document.getElementById('save_heightmap').checked;
+    const save_texturemap = document.getElementById('save_texturemap').checked;
+    const save_terrain = document.getElementById('save_terrain').checked;
+
+    console.log('Save heightmap as: ' + image_type);
+    console.log('Save heightmap: ' + save_heightmap);
+    console.log('Save texturemap: ' + save_texturemap);
+    console.log('Save terrain geometry: ' + save_terrain);
+
+    if (!save_heightmap && !save_texturemap && !save_terrain) {
+        alert('Bitte wähle mindestens eine der Speichermöglichkeiten über die Checkbox aus');
+    }
+
+    if (save_heightmap) {
+        save_image('heightmap', image_type);
+    }
+
+    if (save_texturemap) {
+        save_image('texturemap', image_type);
+    }
+
+    if (save_terrain) {
+        save_geometry();
+    }
+}
+
+function save_image(image_source, image_type) {
+    
+    let canvas = null;
+    let ctx = null;
+    let default_filename = '';
+    
+    switch(image_source) {
+        case 'heightmap':
+            canvas = heightmap;
+            ctx = heightmap_ctx;
+            default_filename = 'Heightmap';
+            break;
+        case 'texturemap':
+            canvas = texturemap;
+            ctx = texturemap_ctx;
+            default_filename = 'Texturemap';
+            break;
+    }
+
+    switch(image_type) {
+        case 'pgm_ppm':
+            if(image_source == 'heightmap') {
+                save_pgm(canvas, ctx, default_filename);
+            }
+            else {
+                save_ppm(canvas, ctx, default_filename);
+            }
+            break;
+        case 'jpg':
+            save_jpg(canvas, default_filename);
+            break;
+        case 'png':
+            save_png(canvas, default_filename);
+            break;
+    }
+}
+
+function save_pgm(canvas, ctx, default_filename) {
+    
+    const image_data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    
+    let picture_string = 'P2\n';
+    picture_string += canvas.width + ' ' + canvas.height + '\n';
+    picture_string += '255\n';
+    for (let y = 0; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+            // we only access the red color channel as its a grayscale image
+            const pixel_index = (y * canvas.width + x) * 4;
+            picture_string += image_data.data[pixel_index] + ' '; 
+        }
+        picture_string += '\n';
+    }
+
+    let blob = new Blob([picture_string], {type: 'image/x-portable-graymap'});
+    let url = window.URL.createObjectURL(blob);
+
+    let fileName = document.getElementById('ict-fileName').value.trim().replace(/[\\\/:*?"<>|]/g, '');
+    fileName = (fileName == '') ? default_filename + '.' : fileName + '.';
+
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = fileName + 'pgm';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.URL.revokeObjectURL(url);
+}
+
+function save_ppm(canvas, ctx, default_filename) {
+    
+    const image_data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    
+    let picture_string = 'P3\n';
+    picture_string += canvas.width + ' ' + canvas.height + '\n';
+    picture_string += '255\n';
+    for (let y = 0; y < canvas.height; y++) {
+        for (let x = 0; x < canvas.width; x++) {
+            // we only access the red, green and blue color channel as its a color image (ignore alpha channel)
+            const pixel_index = (y * canvas.width + x) * 4;
+            picture_string += image_data.data[pixel_index] + ' ' + image_data.data[pixel_index + 1] + ' ' + image_data.data[pixel_index + 2] + ' '; 
+        }
+        picture_string += '\n';
+    }
+
+    let blob = new Blob([picture_string], {type: 'image/x-portable-pixmap'});
+    let url = window.URL.createObjectURL(blob);
+
+    let fileName = document.getElementById('ict-fileName_texturemap').value.trim().replace(/[\\\/:*?"<>|]/g, '');
+    fileName = (fileName == '') ? default_filename + '.' : fileName + '.';
+
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = fileName + 'ppm';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.URL.revokeObjectURL(url);
+}
+
+function save_jpg(canvas, default_filename) {
+    
+    let url = canvas.toDataURL('image/jpg');
+
+    let fileName = document.getElementById('ict-fileName').value.trim().replace(/[\\\/:*?"<>|]/g, '');
+    fileName = (fileName == '') ? default_filename + '.' : fileName + '.';
+
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = fileName + 'jpg';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.URL.revokeObjectURL(url);
+}
+
+function save_png(canvas, default_filename) {
+    
+    let url = canvas.toDataURL('image/png');
+
+    let fileName = document.getElementById('ict-fileName').value.trim().replace(/[\\\/:*?"<>|]/g, '');
+    fileName = (fileName == '') ? default_filename + '.' : fileName + '.';
+
+    let link = document.createElement('a');
+    link.href = url;
+    link.download = fileName + 'png';
+
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    window.URL.revokeObjectURL(url);
+}
+
+function save_geometry() {
+    console.log('not yet implemented');
+}
+
+function uploadFile() {
+
+    let file = document.getElementById('file-upload').files[0];
+    
+    if(file) {
+        let reader = new FileReader();
+
+        // define what should be done with the raw text once it is read
+        reader.onload = function(e) {
+            let content = e.target.result;
+
+            let fileInfo = prepareFile(content, active_type);
+
+            if (fileInfo.image == -1) {
+                // wrong format or couldn't process data
+                alert('Das Format wurde nicht erkannt oder es gab Probleme beim Auslesen der Daten, bitte versuchen Sie es mit einer anderen Datei vom Typen "pgm" oder "ppm"')
+                return;
+            }
+
+            // get relevant canvas
+            let canvas = null;
+            switch (active_type) {
+                case 'heightmap':
+                    if (fileInfo.type == 'ppm') {
+                        alert('Für Heightmaps muss das Format "pgm" verwendet werden');
+                        return;
+                    }
+                    canvas = heightmap;
+                    document.getElementById('ict-fileWidth').value = picInfo.width;
+                    document.getElementById('ict-fileHeight').value = picInfo.height;
+                    break;
+                case 'texturemap':
+                    if (fileInfo.type == 'pgm') {
+                        alert('Für Heightmaps muss das Format "ppm" verwendet werden');
+                        return;
+                    }
+                    canvas = texturemap;
+                    document.getElementById('ict-fileWidth_texturemap').value = picInfo.width;
+                    document.getElementById('ict-fileHeight_texturemap').value = picInfo.height;
+                    break;
+            }
+        
+            if (fileInfo.type == 'pgm') {
+                pgmToCanvas(canvas, fileInfo);
+            }
+            else if (fileInfo.type == 'ppm') {
+                ppmToCanvas(canvas, fileInfo);
+            }
+        }
+
+        reader.readAsText(file);
+        // cuts off file extension
+        const fileName = file.name.split('.').slice(0, -1).join('.');
+
+        switch(active_type) {
+            case 'heightmap':
+                document.getElementById('ict-fileName').value = fileName;
+                break;
+            case 'texturemap':
+                document.getElementById('ict-fileName_texturemap').value = fileName;
+                break;
+        }
+    }
+}
+
+function prepareFile(file) {
+    let fileInfo = {};
+    
+    file = file.trim();
+
+    let type = -1;
+
+    if (file.startsWith('P2')) {
+        type = 'pgm';
+    } 
+    else if (file.startsWith('P3')) {
+        type = 'ppm';
+    }
+
+    fileInfo.type = type;
+
+    let processedFile = [];
+
+    switch (fileInfo.type) {
+        case -1:
+            processedFile = -1;
+            break;
+        case 'pgm':
+            file = preprocessFile(file);
+
+            var lines = file.split('\n');                       // split lines into array
+            lines.shift();                                      // remove header (P2)
+            var dimensions = lines.shift().split(' ');          // get the dimensions
+            fileInfo.width = parseInt(dimensions[0]);           // get width from dimension
+            fileInfo.height = parseInt(dimensions[1]);          // get height from dimension
+            fileInfo.maxValue   = parseInt(lines.shift());      // get the brightness maxValue 
+            var picInfo = lines.join(' ').trim().split(/\s+/);
+
+            for (var y = 0; y < fileInfo.height; y++) {
+                var newRow = [];
+                for (var x = 0; x < fileInfo.width; x++) {
+                    var currIndex = fileInfo.width * y + x;
+
+                    // check if in range. If not, set default values
+                    if(currIndex >= picInfo.length) {
+                        var pixelVal = 255;
+                    }
+                    else {
+                        var pixelVal = Math.round((parseInt(picInfo[currIndex]) / fileInfo.maxValue ) * 255);
+                    }
+                    newRow.push(pixelVal);
+                }
+                processedFile.push(newRow);
+            }
+            break;
+        case 'ppm':
+            file = preprocessFile(file);
+
+            var lines = file.split('\n');                       // split lines into array
+            lines.shift();                                      // remove header (P2)
+            var dimensions = lines.shift().split(' ');          // get the dimensions
+            fileInfo.width = parseInt(dimensions[0]);           // get width from dimension
+            fileInfo.height = parseInt(dimensions[1]);          // get height from dimension
+            fileInfo.maxValue = parseInt(lines.shift());        // get the brightness maxValue 
+            var picInfo = lines.join(' ').trim().split(/\s+/);
+
+            for (var y = 0; y < fileInfo.height; y++) {
+                var newRow = [];
+                for (var x = 0; x < fileInfo.width; x++) {
+                    var currIndex = (fileInfo.width * y + x) * 3;
+
+                    var rgb = [];
+
+                    // check if in range. If not, set default values
+                    if(currIndex >= picInfo.length) {
+                        var pixelVal = 255;
+                        rgb.push(pixelVal); //r
+                        rgb.push(pixelVal); //g
+                        rgb.push(pixelVal); //b
+                    }
+                    else {
+                        rgb.push(Math.round((parseInt(picInfo[currIndex]) / fileInfo.maxValue ) * 255));      //r
+                        rgb.push(Math.round((parseInt(picInfo[currIndex + 1]) / fileInfo.maxValue ) * 255));  //g
+                        rgb.push(Math.round((parseInt(picInfo[currIndex + 2]) / fileInfo.maxValue ) * 255));  //b
+                    }
+                    newRow.push(rgb);
+                }
+                processedFile.push(newRow);
+            }
+            break;
+    }
+
+    fileInfo.image = processedFile;
+
+    return fileInfo;
+}
+
+function preprocessFile(rawFile) {
+
+    // this gets rid of comments after a '#'
+    let processedFile = rawFile.replace(/#[^\n]*/g, '');
+    
+    // this removes all empty lines
+    processedFile = processedFile.replace(/^\s*\n/gm, '');
+    
+    return processedFile;
+}
+
+function pgmToCanvas(canvas, picInfo) {    
+    canvas.width = picInfo.width;
+    canvas.height = picInfo.height;
+    let context = canvas.getContext('2d');
+
+    for (let x = 0; x < canvas.width; x++) {
+        for (let y = 0; y < canvas.height; y++) {
+            context.fillStyle = 'rgb(' + picInfo.image[y][x] + ', ' + picInfo.image[y][x] + ', ' + picInfo.image[y][x] + ')';
+            context.fillRect(x, y, 1, 1);
+        }
+    }
+}
+
+function ppmToCanvas(canvas, picInfo) {
+    canvas.width = picInfo.width;
+    canvas.height = picInfo.height;
+    let context = canvas.getContext('2d');
+
+    for (let x = 0; x < canvas.width; x++) {
+        for (let y = 0; y < canvas.height; y++) {
+            context.fillStyle = 'rgb(' + picInfo.image[y][x][0] + ', ' + picInfo.image[y][x][1] + ', ' + picInfo.image[y][x][2] + ')';
+            context.fillRect(x, y, 1, 1);
+        }
+    } 
+}

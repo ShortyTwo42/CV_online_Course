@@ -703,10 +703,6 @@ function downloadFile() {
     const save_input = document.getElementById('save_input_image').checked;
     const save_output = document.getElementById('save_output_image').checked;
 
-    console.log('Save image as: ' + image_type);
-    console.log('Save input image: ' + save_input);
-    console.log('Save output image: ' + save_output);
-
     if (!save_input && !save_output) {
         alert('Bitte wähle mindestens eines der beiden Bilder über die Checkbox aus');
     }

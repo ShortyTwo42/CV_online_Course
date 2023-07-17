@@ -33,7 +33,7 @@
     margin: 0 1.5rem;
 }
 
-.heightmap_container {
+.canvas_container {
     height: 100%;
     flex-grow: 1;
     overflow: scroll;
@@ -43,22 +43,22 @@
     flex-grow: 1;
 }
 
-.eraser_active {
+.active_elem {
     color: var(--active_elem);
 }
 
 
 /* Custom Scrollbar */
-.heightmap_container::-webkit-scrollbar {
+.canvas_container::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
 }
 
-.heightmap_container::-webkit-scrollbar-track {
+.canvas_container::-webkit-scrollbar-track {
     background: transparent; 
 }
  
-.heightmap_container::-webkit-scrollbar-thumb {
+.canvas_container::-webkit-scrollbar-thumb {
     background: var(--gray); 
     border-radius: 1rem;
 }

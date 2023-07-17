@@ -40,6 +40,12 @@ html *, body * {
     margin: 0.3rem;
 }
 
+.ict-subHeader h2 {
+    width: 100%;
+    text-align: center;
+    margin: 0.3rem;
+}
+
 .ict-subHeader {
     padding: 0.3rem 1rem 0.3rem 1rem;
     border-style: solid;
