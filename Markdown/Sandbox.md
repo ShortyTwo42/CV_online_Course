@@ -45,3 +45,9 @@ Das "PutPixel"-Tool wurde entwickelt, um den Teilnehmenden des Kurses die Mögli
 ??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicFilter.html)
 
 
+## MyTerrainCreator
+"MyTerrainCreator" wurde als Tool entwickelt um interaktiv Heightmaps zu erstellen und direkt die Auswirkung auf ein virtuelles Terrain zu erkennen
+
+??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyTerrainCreator.html)
+
+
