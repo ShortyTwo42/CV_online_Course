@@ -3,4 +3,4 @@ check "https://liascript.github.io/course/?https://raw.githubusercontent.com/lia
 
 Please add new courses to the landing page (../Markdown/LandingPage.md) using the "[preview-lia]" command. 
 
-All Tools are accessible in the sandbox (../Markdown/Sandbox.md) and included via the "[lia-embed]" command -> (??[alt-text](url)).
+All Tools are accessible in the sandbox (../Markdown/Sandbox.md).
