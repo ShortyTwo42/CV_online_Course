@@ -3,7 +3,7 @@ author:     Leon Endris
 
 email:      leendris@uni-koblenz.de
 
-version:    0.1.0
+version:    1.0.0
 
 language:   de
 
@@ -12,7 +12,7 @@ narrator:   Deutsch Female
 comment:    Dies ist die Sandbox für den
             CV Online Kurs. Alle Tools, die für
             den Kurs entwickelt wurden werden 
-            hier aufgelistet und kurz beschrieben
+            hier aufgelistet und beschrieben
 
 link:       ../CSS/Main.css
 
