@@ -3,7 +3,7 @@ author:     Leon Endris
 
 email:      leendris@uni-koblenz.de
 
-version:    0.2.0
+version:    1.0.0
 
 language:   de
 
@@ -17,6 +17,8 @@ comment:    Dies ist die erste Lektion des
 link:       ../CSS/Main.css 
 
 script:     ../JavaScript/LiaScriptCustom.js
+
+logo:       ../Images/Rastergraphics/Rastergraphics_Logo.png
 
 -->
 
@@ -33,6 +35,8 @@ Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skal
 > ![butterflyZoom0](../Images/Rastergraphics/blue_butterfly_zoom_0.png) ![butterflyZoom1](../Images/Rastergraphics/blue_butterfly_zoom_1.png) ![butterflyZoom2](../Images/Rastergraphics/blue_butterfly_zoom_2.png) ![butterflyZoom4](../Images/Rastergraphics/blue_butterfly_zoom_3.png)
 
 # Wie werden einfache Bildformate codiert?
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+
 Gehen wir zunächst von einem simplen Schwarz-Weiß-Bild aus. Wir codieren nun den Wert eines jeden Pixels als Zahl. *Schwarz* wird als *"1"* und *Weiß* wird als *"0"* codiert. Das ist schon fast die Codierung die wir für das lesen einer **Portable Bitmap (PBM)** verwenden. In der ersten Zeile muss nun zusätzlich das Format angeben werden. **PBMs** werden dabei durch das einfügen von *"P1"* in der ersten Zeile gekennzeichnet. Anschließend geben wir die Dimension unseres Bildes in der zweiten Zeile an. Also die Breite und danach die Höhe. Die restlichen Zeilen codieren dann das eigentliche Bild.
 
 > Codierung eines Smileys im PBM Format
@@ -48,7 +52,12 @@ Farbbilder sind mit den vorherigen Formaten nicht darstellbar. Auf einem gängig
 > Codierung eines Smileys im **PPM** Format
 > ![smileyPPM](../Images/Rastergraphics/PPM_Coded.png)
 
+> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen
+> !?[PixelgraphicVideo](https://youtu.be/-6yhYWyqlCo)
+
 ## Übersicht der Formate PBM, PGM und PPM
+An dieser Stelle werden die wichtigsten Details nochmals aufgelistet.
+
 Das **Portable Bitmap (PBM)** Format ist gut für die Erstellung von Schwarz-Weiß-Bildern geeignet. Der Aufbau ist wie folgt:
 
 * Die erste Zeile gibt das Format an. Damit erkannt wird, dass es sich um ein **PBM** handelt, tragen wir dort *"P1"* ein.
@@ -88,6 +97,8 @@ Erstelle nun eigene Bilder mit dem Tool "MyPicCoder". Nutze den Editor, um dein 
 ??[MyPicCoder](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicCoder.html)
 
 # Programmierübung am Beispiel von Pixel-/Rastergrafiken
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+
 Wie könnte wir die erstellung einer Pixel-/Rastergrafik zumindest teilweise automatisieren? Stellen wir uns dafür zunächst das Raster eines Bildes als Koordinatensystem vor, bei dem wir die einzelnen Pixel nur mit natürlichen Zahlen (0, 1, 2, ...) ansprechen können. Das Koordinatensystem bei Bildern startet in der oberen linken Ecke. Zudem startet es nicht von 1, sondern in der Informatik zählen wir von 0 aufsteigend. Möchten wir also das obere linke Pixel eines Bildes ansprechen, so geben wir die Koordinaten *"(0, 0)"* an. Es gibt nun eine Funktion **"putPixel()"**. An diese Funktion übergeben wir die Koordinate, die wir einfärben wollen. Das würde folgendermaßen Aussehen:
 
 > Klicke auf die einzelnen Bilder um sie im Vollbild zu betrachten. Auf jedem der Bilder ist links der Editor zu sehen, in dem wir die Funktion aufrufen. Rechts sehen wir das Bildkoordinatensystem, nachdem die Funktion ausgeführt wurde. Im ersten Bild wird die Funktion nur mit den Koordinaten aufgerufen. Das führt dazu, dass das aufgerufene Pixel schwarz gefärbt wird. Im zweiten Bild wird die Funktion zusätzlich mit einer Zahl zwischen *"0" (schwarz)* und *"255" (weiß)* aufgerufen, um das Pixel in einem gewünschten Grauwert zu färben. Und im dritten Bild wird die Funktion mit drei Zahlen zwischen *"0"* und *"255"* aufgerufen, um die Färbung in verschiedenen Farben zu ermöglichen.
@@ -120,6 +131,8 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 > Um in unserem Beispiel also nicht einfach das gesamte Bild schwarz zu färben, können wir zusätzlich eine Bedingung für die **"putPixel()"** Funktion definieren.  Die Funktion soll nur aufgerufen werden, wenn x und y gleich sind. 
 > ![doubleForLoopIf](../Images/Rastergraphics/Double_For_Loop_If.png)
 
+> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen
+> !?[PutPixelVideo](https://youtu.be/SJvE3u-DgiQ)
 
 ## Programmierbeispiel: PutPixel
 Versuche es nun selbst mithilfe des PutPixel Tools. Mögliche Übungen:
