@@ -3,7 +3,7 @@ author:     Leon Endris
 
 email:      leendris@uni-koblenz.de
 
-version:    1.0.0
+version:    1.0.1
 
 language:   de
 
@@ -88,13 +88,53 @@ Das **Portable Pixmap (PPM)** Format ist für die Erstellung von Farbbildern gee
 > ![ppmOverview](../Images/Rastergraphics/PPM_Overview.png)
 
 # Erstelle ein eigenes Bild
-Erstelle nun eigene Bilder mit dem Tool "MyPicCoder". Nutze den Editor, um dein Bild in einem der drei Vorgestellten Formate zu erstellen. Mögliche Motive wären:
+Erstelle nun eigene Bilder mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor, um dein Bild in einem der drei Vorgestellten Formate zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
 
 * Der eigene Name
-* Ein Haus
-* Ein Smiley
+* Ein Baum
+* Ein einfaches Emoji
+
+Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> ein Beispielbild auswählen und dieses bearbeiten und anpassen.
 
 ??[MyPicCoder](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicCoder.html)
+
+## MyPicCoder Anleitung
+<div class="instruction">
+    <p>
+        Das Tool **"MyPicCoder"** ist in zwei Abschnitte aufgeteilt. Links der Editor und rechts die Vorschau
+        <img src="../Images/Tools/MyPicCoder/MyPicCoder_overview.png">
+    </p>
+    <p>
+        Im Header befinden sich alle wichtigen Funktionen
+        <img src="../Images/Tools/MyPicCoder/MyPicCoder_header.png">
+    </p>
+    <p>
+        Links im Header kann zunächst der Dateiname frei gewählt werden. 
+        <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_left.png"></p>
+        Die Icons bedeuten folgendes von links nach rechts:
+        <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/floppy-disk-solid.svg" width="20" height="20"> Die Diskette, speichert das aktuelle Bild mit dem aktuell ausgewählten Dateinamen.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/folder-open-solid.svg" width="20" height="20"> Der Ordner kann verwendet werden, um eigene Bilder hochzuladen und diese zu bearbeiten. Hierbei werden nur Dateien der Art **"PBM"**, **"PGM"**, **"PPM"** und "svg" angenommen.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> Die Datei mit Pfeil, öffnet das Beispielbilder Menü (zu diesem kommen wir später).</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrow-right-solid.svg" width="20" height="20"> Der Pfeil, der nach rechts zeigt, versteckt die Vorschau und gibt dem Editor, den gesamten Platz.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrow-left-solid.svg" width="20" height="20"> Der Pfeil, der in beide Richtungen zeigt, sorgt dafür, dass Editor und Vorschau, zu gleichen Anteilen gezeigt werden</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrows-left-right-solid.svg" width="20" height="20"> Der Pfeil, der nach links zeigt, versteckt den Editor und gibt der Vorschau, den gesamten Platz.</li>
+        </ul>
+    </p>
+    <p>
+        Rechts im Header sehen wir folgende Icons.
+        <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_right.png"></p>
+        Die Icons bedeuten folgendes von links nach rechts:
+        <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Änderungen im Editor werden also in Echtzeit auch in der Vorschau gezeigt. Die Live-Vorschau kann jederzeit an und ausgeschaltet werden.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann das Code Symbol geklickt werden, um die Vorschau manuell zu aktualisieren.</li>
+        </ul>
+    </p>
+    <p>
+        Nun zum Beispielbilder Menü. In diesem kann zunächst ausgewählt werden, von welchem Bildtyp das Beispiel sein soll. Dabei wird zwischen **"PBM"**, **"PGM"**, **"PPM"** und "svg" unterschieden. Für jeden Bildtyp gibt es drei Beispiele, die ausgewählt werden können. Durch Klicken auf das "Datei mit Pfeil"-Icon in der unteren rechten Ecke des Menüs, wird das ausgewählte Beispiel hochgeladen und kann bearbeitet werden.
+        <img src="../Images/Tools/MyPicCoder/MyPicCoder_example_pictures.png">
+    </p>
+</div>
 
 # Programmierübung am Beispiel von Pixel-/Rastergrafiken
 Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
@@ -135,10 +175,40 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 > !?[PutPixelVideo](https://youtu.be/SJvE3u-DgiQ)
 
 ## Programmierbeispiel: PutPixel
-Versuche es nun selbst mithilfe des PutPixel Tools. Mögliche Übungen:
+Versuche es nun selbst mithilfe des PutPixel Tools. Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. 
+Mögliche Aufgaben wären:
 
 * Färbe nur die 3te Reihe schwarz
 * Färbe ein Pixel nur, wenn x + y ein Bestimmtes Ergebnis erfüllen
 * Änder die Breite und Höhe des Bildes auf *"256"* und gehe mit einer verschachtelten Schleife über jedes Pixel. Setze nun Beispielsweise den x-Wert als Rot und den y-Wert als Grün ein. (Erinnerung: **"putPixel(x, y, [0, 0, 0])"** würde das Pixel schwarz färben)
 
 ??[PutPixel](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/PutPixel.html)
+
+### PutPixel Anleitung
+<div class="instruction">
+    <p>
+        Das Tool **"PutPixel"** ist in zwei Abschnitte aufgeteilt. Links der Code Editor und rechts die Vorschau
+        <img src="../Images/Tools/PutPixel/PutPixel_overview.png">
+    </p>
+    <p>
+        Im Header kann zunächst die Dimension, also Breite und Höhe, des Bildes ausgewählt werden
+        <img src="../Images/Tools/PutPixel/PutPixel_header.png">
+    </p>
+    <p>
+        Links im Header sehen wir folgende Icons.
+        <p><img src="../Images/Tools/PutPixel/PutPixel_header_left.png"></p>
+        Die Icons bedeuten folgendes von links nach rechts:
+        <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrow-rotate-right-solid.svg" width="20" height="20"> Klickt man auf diesen "Reload" Button, wird ein simpler Beispielcode geladen, um einen Ansatzpunkt zur Verfügung zu stellen, der weiter verändert werden kann.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrow-right-solid.svg" width="20" height="20"> Der Pfeil, der nach rechts zeigt, versteckt die Vorschau und gibt dem Editor, den gesamten Platz.</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrow-left-solid.svg" width="20" height="20"> Der Pfeil, der in beide Richtungen zeigt, sorgt dafür, dass Editor und Vorschau, zu gleichen Anteilen gezeigt werden</li>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/arrows-left-right-solid.svg" width="20" height="20"> Der Pfeil, der nach links zeigt, versteckt den Editor und gibt der Vorschau, den gesamten Platz.</li>
+        </ul> 
+    </p>
+    <p>
+        Rechts im Header sehen wir das Code Icon.
+        <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Wird dieses Angeklickt, wird das Programm aus dem Editor zunächst überprüft (ob dieses auch nur zugelassene Funktionen beinhaltet), und anschließend ausgeführt.</li>
+       </ul> 
+    </p>
+</div>
