@@ -30,18 +30,27 @@ Gängige Bildformate wie **JPG** oder **PNG** verwenden ein Raster, um sogenannt
 
 Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skalierung nicht möglich ist. Wenn wir in ein solches Bild hineinzoomen, werden die einzelnen Pixel immer deutlicher sichtbar.
 
-> In diesen Abbildungen wird immer weiter in ein Bild hineingezoomt. Die einzelnen Pixel werden immer deutlicher sichtbar
->
-> ![butterflyZoom0](../Images/Rastergraphics/blue_butterfly_zoom_0.png) ![butterflyZoom1](../Images/Rastergraphics/blue_butterfly_zoom_1.png) ![butterflyZoom2](../Images/Rastergraphics/blue_butterfly_zoom_2.png) ![butterflyZoom4](../Images/Rastergraphics/blue_butterfly_zoom_3.png)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+In diesen Abbildungen wird immer weiter in ein Bild hineingezoomt. Die einzelnen Pixel werden immer deutlicher sichtbar
+
+![butterflyZoom0](../Images/Rastergraphics/blue_butterfly_zoom_0.png) ![butterflyZoom1](../Images/Rastergraphics/blue_butterfly_zoom_1.png) ![butterflyZoom2](../Images/Rastergraphics/blue_butterfly_zoom_2.png) ![butterflyZoom4](../Images/Rastergraphics/blue_butterfly_zoom_3.png)
+
+
 
 # Wie werden einfache Bildformate codiert?
 Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+
+Portable Bitmap (PBM)
+================================================================================================================================================================================
 
 Gehen wir zunächst von einem simplen Schwarz-Weiß-Bild aus. Wir codieren nun den Wert eines jeden Pixels als Zahl. *Schwarz* wird als *"1"* und *Weiß* wird als *"0"* codiert. Das ist schon fast die Codierung die wir für das lesen einer **Portable Bitmap (PBM)** verwenden. In der ersten Zeile muss nun zusätzlich das Format angeben werden. **PBMs** werden dabei durch das einfügen von *"P1"* in der ersten Zeile gekennzeichnet. Anschließend geben wir die Dimension unseres Bildes in der zweiten Zeile an. Also die Breite und danach die Höhe. Die restlichen Zeilen codieren dann das eigentliche Bild.
 
 > Codierung eines Smileys im PBM Format
 > 
 > ![smileyPBM](../Images/Rastergraphics/PBM_Coded.png)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Möchten wir nun Grauwertbilder codieren, also Bilder, die auch Werte zwischen Schwarz und Weiß annehmen können, nutzen wir das **Portable Graymap (PGM)** Format. Die erste Zeile wird von *"P1"* in *"P2"* umgewandelt, um zu kennzeichnen, dass es sich nun um ein **PGM** handelt. In Zeile zwei werden weiterhin die Breite und Höhe unseres Bildes angezeigt. In einer dritten Zeile wird nun zusätzlich die **Farbtiefe** angegeben. Die **Farbtiefe** gibt an, wie viele Abstufungen von Grautönen wir zulassen, beziehungsweise was der Maximalwert sein soll, bei dem ein Pixel ganz weiß ist. Hierbei ist es nun wichtig zu beachten, dass *"0" Schwarz* codiert und die Zahl, die wir als Maximalwert festgelegt haben *Weiß*. In unserem Beispiel geben wir eine **Farbtiefe** von *"2"* an. Das bedeutet, dass *"0" schwarz*, *"1" grau* und *"2" weiß* codiert.
 
