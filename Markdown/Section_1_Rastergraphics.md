@@ -77,6 +77,8 @@ Farbbilder sind mit den vorherigen Formaten nicht darstellbar. Auf einem gängig
 > 
 > !?[pixelgraphicVideo](https://youtu.be/-6yhYWyqlCo)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ## Übersicht der Formate PBM, PGM und PPM
 An dieser Stelle werden die wichtigsten Details nochmals aufgelistet.
 
@@ -227,6 +229,8 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 > Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
 > 
 > !?[putPixelVideo](https://youtu.be/SJvE3u-DgiQ)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Programmierbeispiel: PutPixel
 Versuche es nun selbst mithilfe des PutPixel Tools. Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. 
