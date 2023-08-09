@@ -24,14 +24,6 @@ script:     ../JavaScript/LiaScriptCustom.js
 # Lektion 2: Vektorgrafiken
 Willkommen zur zweiten Lektion des CV Online Kurses. In dieser Lektion lernst du mehr über den Aufbau von Vektorgrafiken. Außerdem sollst du am Ende dieser Lektion in der Lage sein erste eigene Vektorgrafiken selber zu erstellen.
 
-> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
-> 
-> !?[Test](https://www.youtube.com/watch?v=eCWBAX9Ihw0)
-
-Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
- 
-!?[Test](https://www.youtube.com/watch?v=eCWBAX9Ihw0)
-
 # Wiederholungsquiz: "Pixel-/Rastergrafik"
 In diesem kleinen Wiederholungsquiz kannst du deinen eigenen Wissensstand zum Thema "Pixel-/Rastergrafiken" nochmals überprüfen. Auch falsche Antworten können dir helfen das gelernte zu festigen, indem du die Erklärung für die korrekte Antwort nochmal verinnerlichst. Hast du eine falsche Antwort angegeben und möchtest es nicht nochmals versuchen, kannst du dir über das Häkchen die Lösung anzeigen lassen.
 
