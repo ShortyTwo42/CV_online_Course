@@ -39,7 +39,7 @@ Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skal
 
 
 # Wie werden einfache Bildformate codiert?
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Portable Bitmap (PBM)
@@ -75,7 +75,7 @@ Farbbilder sind mit den vorherigen Formaten nicht darstellbar. Auf einem gängig
 
 > Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
 > 
-> !?[PixelgraphicVideo](https://youtu.be/-6yhYWyqlCo)
+> !?[pixelgraphicVideo](https://youtu.be/-6yhYWyqlCo)
 
 ## Übersicht der Formate PBM, PGM und PPM
 An dieser Stelle werden die wichtigsten Details nochmals aufgelistet.
@@ -174,7 +174,7 @@ Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-
 </div>
 
 # Programmierübung am Beispiel von Pixel-/Rastergrafiken
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Die PutPixel-Funktion
@@ -226,7 +226,7 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 
 > Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
 > 
-> !?[PutPixelVideo](https://youtu.be/SJvE3u-DgiQ)
+> !?[putPixelVideo](https://youtu.be/SJvE3u-DgiQ)
 
 ## Programmierbeispiel: PutPixel
 Versuche es nun selbst mithilfe des PutPixel Tools. Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. 

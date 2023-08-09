@@ -24,6 +24,14 @@ script:     ../JavaScript/LiaScriptCustom.js
 # Lektion 2: Vektorgrafiken
 Willkommen zur zweiten Lektion des CV Online Kurses. In dieser Lektion lernst du mehr über den Aufbau von Vektorgrafiken. Außerdem sollst du am Ende dieser Lektion in der Lage sein erste eigene Vektorgrafiken selber zu erstellen.
 
+> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
+> 
+> !?[Test](https://www.youtube.com/watch?v=eCWBAX9Ihw0)
+
+Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
+ 
+!?[Test](https://www.youtube.com/watch?v=eCWBAX9Ihw0)
+
 # Wiederholungsquiz: "Pixel-/Rastergrafik"
 In diesem kleinen Wiederholungsquiz kannst du deinen eigenen Wissensstand zum Thema "Pixel-/Rastergrafiken" nochmals überprüfen. Auch falsche Antworten können dir helfen das gelernte zu festigen, indem du die Erklärung für die korrekte Antwort nochmal verinnerlichst. Hast du eine falsche Antwort angegeben und möchtest es nicht nochmals versuchen, kannst du dir über das Häkchen die Lösung anzeigen lassen.
 
@@ -71,6 +79,9 @@ Vektorgrafiken bestehen aus simplen geometrischen Formen, wie unter anderem Lini
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Rasterisierung
 =================================================================================================================================================================================
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Bei der Rasterisierung eines SVGs wandelt der Computer die in einer Vektorgrafik gespeicherten geometrischen Informationen in eine Rastergrafik um. Ein einfaches Beispiel hierfür ist die Darstellung eines Dreiecks. Ein Koordinatensystem und die zugehörigen Koordinaten der Dreieckseckpunkte, sowie die Farbe des Dreiecks wurden in einem SVG gespeichert. Nun soll dieses Dreieck in einem Raster der Größe 10 x 10 Pixeln dargestellt werden. 
 
@@ -84,12 +95,21 @@ Auffallend sind die stufenartigen Muster, die durch die harten übergänge zwisc
 
 ![TriangleVectorAntiAliasing](../Images/Vectorgraphics/anti_aliasing.png)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
+> 
+> !?[rasterizationVideo](https://youtu.be/AgdSERFE8cY)
+
 ## Wie ist ein SVG aufgebaut
 **Scalable Vector Graphics** (SVGs) sind ein Bildformat, mit dem wir 2D Vektorgrafiken codieren können. Bildinformationen werden nicht in einem Raster gespeichert, sondern in simplen geometrischen Formen. Mit Tools wie "Inkscape" oder auch "Adobe Illustrator" können SVGs in einem Editor erstellt werden. Es gibt aber auch die Möglichkeit SVGs direkt mit Code zu erstellen. 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SVGs
 =================================================================================================================================================================================
+Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Um ein SVG zu erstellen müssen wir zunächst einen **SVG-tag** öffnen: **\<svg>...</svg>**. In diesem Tag definieren wir zusätzlich die Dimensionen unseres Koordinatensystems. Die ersten beiden Zahlen sind dabei die Koordinaten für die obere linke Ecke des Koordinatensystems und die letzten beiden Zahlen für die untere rechte Ecke. Möchten wir also ein Koordinatensystem erstellen, dessen obere linke Ecke bei (0, 0) liegt und dessen untere rechte Ecke bei (20, 20) liegt schreiben wir: **\<svg viewBox="0 0 20 20">...</svg>**
 
@@ -183,7 +203,11 @@ Einige Kommandos für das Attribute **d** sind wie folgt aufgebaut:
 >
 > ![path1](../Images/Vectorgraphics/Path_1.png) ![path2](../Images/Vectorgraphics/Path_2.png) ![path3](../Images/Vectorgraphics/Path_3.png) ![path4](../Images/Vectorgraphics/Path_4.png) ![path5](../Images/Vectorgraphics/Path_5.png)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+> Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
+> 
+> !?[svgVideo](https://youtu.be/U2clZVUNzuc)
 
 # Erstelle ein eigenes SVG
 Erstelle nun ein eigenes SVG mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor um ein SVG zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
