@@ -33,7 +33,6 @@ Quiz
 
 1. Wofür steht das Wort "Pixel"?
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
 [[picture element]]
 <script>
     const input = "@input".trim().toLowerCase();
@@ -48,7 +47,7 @@ Das Wort "Pixel" steht für "picture element" (Bildelement) und beschreibt das k
 <!-- data-randomize -->
 - [( )] Transparenz
 - [( )] Auflösung
-- [( )] Farbtiefe
+- [(X)] Farbtiefe
 - [( )] Helligkeit
 *********************************************************************************************************************************************************************************
 Die Farbtiefe gibt an, wie viele Abstufungen von Helligkeitswerten für jedes Pixel möglich sind. Bei Farbbildern bezieht sie sich auf jeden Farbkanal einzeln.
@@ -60,7 +59,7 @@ Die Farbtiefe gibt an, wie viele Abstufungen von Helligkeitswerten für jedes Pi
 - [( )] 8
 - [( )] 16
 - [( )] 100 000 000
-- [( )] 256
+- [(X)] 256
 *********************************************************************************************************************************************************************************
 Ein Byte entspricht 8 Bit. Jedes Bit kann dabei 2 Werte annehmen: 0 und 1. Wird der Helligkeitswert eines Pixels also mit 1 Bit codiert, gäbe es nur zwei Möglichkeiten. Bei 2 Bit gäbe es bereits **2 \* 2**, also **4** Möglichkeiten. Codieren wir den Helligkeitswert also mit 8 Bit gibt es **2 \* 2 \* 2 \* 2 \* 2 \* 2 \* 2 \* 2 = 2<sup>8</sup> = 256** Möglichkeiten.
 *********************************************************************************************************************************************************************************
