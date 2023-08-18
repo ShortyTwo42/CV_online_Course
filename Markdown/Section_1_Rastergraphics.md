@@ -37,7 +37,6 @@ Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skal
 > ![butterflyZoom0](../Images/Rastergraphics/blue_butterfly_zoom_0.png) ![butterflyZoom1](../Images/Rastergraphics/blue_butterfly_zoom_1.png) ![butterflyZoom2](../Images/Rastergraphics/blue_butterfly_zoom_2.png) ![butterflyZoom4](../Images/Rastergraphics/blue_butterfly_zoom_3.png)
 
 
-
 # Wie werden einfache Bildformate codiert?
 > Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
@@ -51,6 +50,7 @@ Gehen wir zunächst von einem simplen Schwarz-Weiß-Bild aus. Wir codieren nun d
 > 
 > ![smileyPBM](../Images/Rastergraphics/PBM_Coded.png)
 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Portable Graymap (PGM)
 =================================================================================================================================================================================
@@ -60,6 +60,7 @@ Möchten wir nun Grauwertbilder codieren, also Bilder, die auch Werte zwischen S
 > Codierung eines Smileys im PGM Format:
 > 
 > ![smileyPGM](../Images/Rastergraphics/Smiley_PGM.png)
+
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Portable Pixmap (PPM)
@@ -71,13 +72,14 @@ Farbbilder sind mit den vorherigen Formaten nicht darstellbar. Auf einem gängig
 > 
 > ![smileyPPM](../Images/Rastergraphics/PPM_Coded.png)
 
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 > Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
 > 
 > !?[pixelGraphicVideo](https://youtu.be/-6yhYWyqlCo)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ## Übersicht der Formate PBM, PGM und PPM
 An dieser Stelle werden die wichtigsten Details nochmals aufgelistet.
@@ -230,7 +232,6 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 > 
 > !?[putPixelVideo](https://youtu.be/SJvE3u-DgiQ)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Programmierbeispiel: PutPixel
 Versuche es nun selbst mithilfe des PutPixel Tools. Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. 

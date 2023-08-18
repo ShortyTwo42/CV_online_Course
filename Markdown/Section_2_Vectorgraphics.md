@@ -90,7 +90,6 @@ Auffallend sind die stufenartigen Muster, die durch die harten übergänge zwisc
 > 
 > !?[rasterizationVideo](https://youtu.be/AgdSERFE8cY)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Wie ist ein SVG aufgebaut
 **Scalable Vector Graphics** (SVGs) sind ein Bildformat, mit dem wir 2D Vektorgrafiken codieren können. Bildinformationen werden nicht in einem Raster gespeichert, sondern in simplen geometrischen Formen. Mit Tools wie "Inkscape" oder auch "Adobe Illustrator" können SVGs in einem Editor erstellt werden. Es gibt aber auch die Möglichkeit SVGs direkt mit Code zu erstellen. 
@@ -198,7 +197,6 @@ Einige Kommandos für das Attribute **d** sind wie folgt aufgebaut:
 > 
 > !?[svgVideo](https://youtu.be/U2clZVUNzuc)
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 # Erstelle ein eigenes SVG
 Erstelle nun ein eigenes SVG mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor um ein SVG zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
