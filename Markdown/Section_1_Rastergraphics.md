@@ -39,7 +39,7 @@ Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skal
 
 
 # Wie werden einfache Bildformate codiert?
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
+> Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Portable Bitmap (PBM)
@@ -75,7 +75,7 @@ Farbbilder sind mit den vorherigen Formaten nicht darstellbar. Auf einem gängig
 
 > Dieses Video fasst den Inhalt des vorangegangenen Textes zusammen:
 > 
-> !?[pixelgraphicVideo](https://youtu.be/-6yhYWyqlCo)
+> !?[pixelGraphicVideo](https://youtu.be/-6yhYWyqlCo)
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -176,7 +176,7 @@ Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-
 </div>
 
 # Programmierübung am Beispiel von Pixel-/Rastergrafiken
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
+> Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Die PutPixel-Funktion

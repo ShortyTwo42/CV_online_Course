@@ -70,9 +70,7 @@ Vektorgrafiken bestehen aus simplen geometrischen Formen, wie unter anderem Lini
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Rasterisierung
 =================================================================================================================================================================================
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+> Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
 Bei der Rasterisierung eines SVGs wandelt der Computer die in einer Vektorgrafik gespeicherten geometrischen Informationen in eine Rastergrafik um. Ein einfaches Beispiel hierfür ist die Darstellung eines Dreiecks. Ein Koordinatensystem und die zugehörigen Koordinaten der Dreieckseckpunkte, sowie die Farbe des Dreiecks wurden in einem SVG gespeichert. Nun soll dieses Dreieck in einem Raster der Größe 10 x 10 Pixeln dargestellt werden. 
 
@@ -100,9 +98,7 @@ Auffallend sind die stufenartigen Muster, die durch die harten übergänge zwisc
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 SVGs
 =================================================================================================================================================================================
-Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+> Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das gelernte zu festigen.
 
 Um ein SVG zu erstellen müssen wir zunächst einen **SVG-tag** öffnen: **\<svg>...</svg>**. In diesem Tag definieren wir zusätzlich die Dimensionen unseres Koordinatensystems. Die ersten beiden Zahlen sind dabei die Koordinaten für die obere linke Ecke des Koordinatensystems und die letzten beiden Zahlen für die untere rechte Ecke. Möchten wir also ein Koordinatensystem erstellen, dessen obere linke Ecke bei (0, 0) liegt und dessen untere rechte Ecke bei (20, 20) liegt schreiben wir: **\<svg viewBox="0 0 20 20">...</svg>**
 
