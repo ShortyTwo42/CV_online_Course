@@ -48,7 +48,7 @@ Gehen wir zunächst von einem simplen Schwarz-Weiß-Bild aus. Wir codieren nun d
 
 > Codierung eines Smileys im PBM Format:
 > 
-> ![smileyPBM](../Images/Rastergraphics/PBM_Coded.png)
+> ![smileyPBM](../Images/Rastergraphics/PPM_Coded.png)
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
