@@ -19,6 +19,8 @@ link:       ../CSS/Main.css
 
 script:     ../JavaScript/LiaScriptCustom.js
 
+logo:       ../Images/Vectorgraphics/Vectorgraphics_Logo.png
+
 -->
 
 # Lektion 2: Vektorgrafiken
