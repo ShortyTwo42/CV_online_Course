@@ -7,7 +7,6 @@ generate_grid('median');
 generate_grid('mean');
 generate_grid('gaussian');
 
-
 function generate_grid(type) {
     
     const numberGrid = document.getElementById(type + '_grid');
