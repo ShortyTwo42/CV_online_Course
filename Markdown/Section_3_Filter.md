@@ -14,12 +14,11 @@ comment:    Dies ist die dritte Lektion des
             und Nutzen von Filtern wird hier 
             näher erläutert.
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
-script:     ../JavaScript/Filter.js
+script:     ../JavaScript/filter.js
 
 logo:       ../Images/Filter/Filter_Logo.png
-
 
 -->
 

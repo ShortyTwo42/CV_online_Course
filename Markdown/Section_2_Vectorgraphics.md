@@ -15,9 +15,9 @@ comment:    Dies ist die zweite Lektion des
             Nutzen und Einsatzbereich von 
             Vektorgrafiken wird vermittelt.
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
-script:     ../JavaScript/LiaScriptCustom.js
+script:     ../JavaScript/liaScriptCustom.js
 
 logo:       ../Images/Vectorgraphics/Vectorgraphics_Logo.png
 

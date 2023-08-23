@@ -14,9 +14,9 @@ comment:    Dies ist die erste Lektion des
             und Nutzen von Pixel-/Rastergrafiken 
             werden hier vorgestellt.
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
-script:     ../JavaScript/LiaScriptCustom.js
+script:     ../JavaScript/liaScriptCustom.js
 
 logo:       ../Images/Rastergraphics/Rastergraphics_Logo.png
 

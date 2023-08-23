@@ -13,9 +13,9 @@ comment:    Dies ist die fünfte und letzte Lektion
             des CV Online Kurses. Hier soll ein
             eigenes kleines Projekt realisiert werden.
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
-script:     ../JavaScript/LiaScriptCustom.js
+script:     ../JavaScript/liaScriptCustom.js
 
 -->
 

@@ -14,9 +14,9 @@ comment:    Dies ist die vierte Lektion des
             simple 3D Meshes in Form von Terrains
             näher erklärt.
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
-script:     ../JavaScript/LiaScriptCustom.js
+script:     ../JavaScript/liaScriptCustom.js
 
 -->
 
