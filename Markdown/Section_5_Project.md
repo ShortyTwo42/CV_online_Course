@@ -15,7 +15,7 @@ comment:    Dies ist die fünfte und letzte Lektion
 
 link:       ../CSS/main.css 
 
-script:     ../JavaScript/liaScriptCustom.js
+script:     ../JavaScript/LiaScriptCustom.js
 
 -->
 

@@ -16,7 +16,7 @@ comment:    Dies ist die erste Lektion des
 
 link:       ../CSS/main.css 
 
-script:     ../JavaScript/liaScriptCustom.js
+script:     ../JavaScript/LiaScriptCustom.js
 
 logo:       ../Images/Rastergraphics/Rastergraphics_Logo.png
 

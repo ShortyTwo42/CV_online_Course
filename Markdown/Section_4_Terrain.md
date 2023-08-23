@@ -16,7 +16,7 @@ comment:    Dies ist die vierte Lektion des
 
 link:       ../CSS/main.css 
 
-script:     ../JavaScript/liaScriptCustom.js
+script:     ../JavaScript/LiaScriptCustom.js
 
 -->
 

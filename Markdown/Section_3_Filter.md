@@ -16,7 +16,7 @@ comment:    Dies ist die dritte Lektion des
 
 link:       ../CSS/main.css 
 
-script:     ../JavaScript/filter.js
+script:     ../JavaScript/Filter.js
 
 logo:       ../Images/Filter/Filter_Logo.png
 

@@ -17,7 +17,7 @@ comment:    Dies ist die zweite Lektion des
 
 link:       ../CSS/main.css 
 
-script:     ../JavaScript/liaScriptCustom.js
+script:     ../JavaScript/LiaScriptCustom.js
 
 logo:       ../Images/Vectorgraphics/Vectorgraphics_Logo.png
 
