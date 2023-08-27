@@ -230,4 +230,3 @@ Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die MÃ
         <img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_menu.png">
     </p>
 </div>
-

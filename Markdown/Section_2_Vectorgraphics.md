@@ -21,6 +21,8 @@ script:     ../JavaScript/LiaScriptCustom.js
 
 logo:       ../Images/Vectorgraphics/Vectorgraphics_Logo.png
 
+attribute:  erste Danksagung
+
 -->
 
 # Lektion 2: Vektorgrafiken

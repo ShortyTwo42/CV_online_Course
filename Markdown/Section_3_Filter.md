@@ -68,7 +68,6 @@ Um gegen den Treppen(stufen)effekt vorzugehen nutzen wir das sogenannte **Anti-A
 # Was sind Filter
 Häufig werden Filter genutzt, um ungewollten Effekten bei aufgenommenen Bildern entgegenzuwirken oder bestimmte Informationen aus Bildern besonders hervorzuheben (beispielsweise Kanten). Einer dieser ungewollten Effekte ist Bildrauschen. Auf dieses Phänomen gehen wir im folgenden Abschnitt genauer ein.
 
-
 ## Bildrauschen
 Sensoren sind nie perfekt. So auch die Sensoren in den Kameras, mit denen wir Bilder aufnehmen. Dadurch kann es zu Ungenauigkeiten kommen, wenn das einfallende Licht in einen Pixelwert umgewandelt werden soll. Diese Ungenauigkeiten führen zu einem sogenannten **verrauschten Bild** und können von Kamera zu Kamera unterschiedlich stark ausfallen. Diese Art des Rauschens nennen wir auch **Gauß-Rauschen**. Eine andere Art von Rauschen ist das sogenannte **Salz-und-Pfeffer-Rauschen**. Dabei sind vereinzelte Pixel entweder annähernd schwarz oder weiß. Dieser Effekt kann auftreten, wenn die einzelnen Sensoren nicht mehr richtig funktionieren und entweder den Wert des Pixels immer als komplett beleuchtet (weiß) oder als unbeleuchtet (schwarz) auswerten.
 
@@ -152,120 +151,10 @@ Die Berechnung neuer Pixelwerte im Ausgabebild ist in den meisten Fällen recht 
 # Pixelwert selbst berechnen
 In diesem Abschnitt, sollst du nun selbst versuchen den neuen Pixelwert eines Eingabepixels zu berechnen, damit du besser verstehst, wie die einzelnen Filter funktionieren.
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Median-Filter
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<lia-keep>
-    <button class="lia-btn--outline myBtn" onclick="generate_grid('median');">
-        Erstelle neue Werte
-    </button>
-    <div class="grid_container" id="median_grid">
-        <!-- You can use the following as an example. Right now it gets created randomly when loading the course -->
-        <div class="grid_item" style="background-color: rgb(109, 109, 109); color: white;" data-value="109">109</div>
-        <div class="grid_item" style="background-color: rgb( 74,  74,  74); color: white;" data-value="74" >74</div>
-        <div class="grid_item" style="background-color: rgb( 49,  49,  49); color: white;" data-value="49" >49</div>
-        <div class="grid_item" style="background-color: rgb(  0,   0,   0); color: white;" data-value="0"  >0</div>
-        <div class="grid_item" style="background-color: rgb( 38,  38,  38); color: white;" data-value="38" >38</div>
-        <div class="grid_item" style="background-color: rgb(146, 146, 146); color: black;" data-value="146">146</div>
-        <div class="grid_item" style="background-color: rgb(148, 148, 148); color: black;" data-value="148">148</div>
-        <div class="grid_item" style="background-color: rgb( 97,  97,  97); color: white;" data-value="97" >97</div>
-        <div class="grid_item" style="background-color: rgb(144, 144, 144); color: black;" data-value="144">144</div> 
-    </div>
-    <div class="myAnswer">
-        <input type="number" class="lia-quiz__input myInput" id="median_answer" placeholder="deine Antwort hier"></input>
-        <button class="lia-btn--outline myBtn" onclick="check_solution('median');">
-            Prüfen
-        </button>
-        <button class="mySolutionBtn lia-btn lia-btn--transparent lia-quiz__resolve" title="zeige Lösung" onclick="show_solution('median');">
-            <i class="icon icon-resolve lia-btn__icon"></i>
-        </button>
-    </div>
-    <div class="mySolution" id="median_solution">
-    </div>
-</lia-keep>
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Mittelwert-Filter
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Bitte trag deinen errechneten Wert in das Antwortfeld ein. Du darfst dein Ergebnis auf ganze Zahlen runden, wenn du trotzdem Dezimalzahlen angeben möchtest, trenne die Vor- und Nachkommastellen mit einem "." anstelle eines ",".
-
-<lia-keep>
-    <button class="lia-btn--outline myBtn" onclick="generate_grid('mean');">
-        Erstelle neue Werte
-    </button>
-    <div class="grid_container" id="mean_grid">
-        <!-- You can use the following as an example. Right now it gets created randomly when loading the course -->
-        <div class="grid_item" style="background-color: rgb(157, 157, 157); color: black;" data-value="157">157</div>
-        <div class="grid_item" style="background-color: rgb(137, 137, 137); color: black;" data-value="137">137</div>
-        <div class="grid_item" style="background-color: rgb(166, 166, 166); color: black;" data-value="166">166</div>
-        <div class="grid_item" style="background-color: rgb(154, 154, 154); color: black;" data-value="154">154</div>
-        <div class="grid_item" style="background-color: rgb(171, 171, 171); color: black;" data-value="171">171</div>
-        <div class="grid_item" style="background-color: rgb(140, 140, 140); color: black;" data-value="140">140</div>
-        <div class="grid_item" style="background-color: rgb(133, 133, 133); color: black;" data-value="133">133</div>
-        <div class="grid_item" style="background-color: rgb(162, 162, 162); color: black;" data-value="162">162</div>
-        <div class="grid_item" style="background-color: rgb(149, 149, 149); color: black;" data-value="149">149</div>
-    </div>
-    <div class="myAnswer">
-        <input type="number" class="lia-quiz__input myInput" id="mean_answer" placeholder="deine Antwort hier"></input>
-        <button class="lia-btn--outline myBtn" onclick="check_solution('mean');">
-            Prüfen
-        </button>
-        <button class="mySolutionBtn lia-btn lia-btn--transparent lia-quiz__resolve" title="zeige Lösung" onclick="show_solution('mean');">
-            <i class="icon icon-resolve lia-btn__icon"></i>
-        </button>
-    </div>
-    <div class="mySolution" id="mean_solution">
-    </div>
-</lia-keep>
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Gauß-Filter
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Bitte trag deinen errechneten Wert in das Antwortfeld ein. Du darfst dein Ergebnis auf ganze Zahlen runden, wenn du trotzdem Dezimalzahlen angeben möchtest, trenne die Vor- und Nachkommastellen mit einem "." anstelle eines ",". Die Gewichte, mit denen du die einzelnen Werte multiplizierst sind bei einem 3x3 großen Fenster zur Erinnerung wie folgt:
-<lia-keep>
-<pre>
-+-----------+
-| 1 | 2 | 1 |
-+-----------+
-| 2 | 4 | 2 |
-+-----------+
-| 1 | 2 | 1 |
-+-----------+
-</pre>
-</lia-keep>
-Denke auch daran, anschließend durch die Summe der Gewichte zu teilen. In diesem Fall also durch **16**.
-
-<lia-keep>
-    <button class="lia-btn--outline myBtn" onclick="generate_grid('gaussian');">
-        Erstelle neue Werte
-    </button>
-    <div class="grid_container" id="gaussian_grid">
-        <!-- You can use the following as an example. Right now it gets created randomly when loading the course -->
-        <div class="grid_item" style="background-color: rgb(157, 157, 157); color: black;" data-value="157">157</div>
-        <div class="grid_item" style="background-color: rgb(137, 137, 137); color: black;" data-value="137">137</div>
-        <div class="grid_item" style="background-color: rgb(166, 166, 166); color: black;" data-value="166">166</div>
-        <div class="grid_item" style="background-color: rgb(154, 154, 154); color: black;" data-value="154">154</div>
-        <div class="grid_item" style="background-color: rgb(171, 171, 171); color: black;" data-value="171">171</div>
-        <div class="grid_item" style="background-color: rgb(140, 140, 140); color: black;" data-value="140">140</div>
-        <div class="grid_item" style="background-color: rgb(133, 133, 133); color: black;" data-value="133">133</div>
-        <div class="grid_item" style="background-color: rgb(162, 162, 162); color: black;" data-value="162">162</div>
-        <div class="grid_item" style="background-color: rgb(149, 149, 149); color: black;" data-value="149">149</div>
-    </div>
-    <div class="myAnswer">
-        <input type="number" class="lia-quiz__input myInput" id="gaussian_answer" placeholder="deine Antwort hier"></input>
-        <button class="lia-btn--outline myBtn" onclick="check_solution('gaussian');">
-            Prüfen
-        </button>
-        <button class="mySolutionBtn lia-btn lia-btn--transparent lia-quiz__resolve" title="zeige Lösung" onclick="show_solution('gaussian');">
-            <i class="icon icon-resolve lia-btn__icon"></i>
-        </button>
-    </div>
-    <div class="mySolution" id="gaussian_solution">
-    </div>
-</lia-keep>
+??[CalcFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/CalcFilter.html)
 
 # Probiere selbst die vorgestellten Filter aus
-Nutze nun selbst das Filter Tool "MyPicFilter", um die vorgestellten Filter in Aktion zu sehen. Versuche anschließend die darauf folgenden Quizfragen zu beantworten. Auch hier sind falsche Antworten nicht schlimm. Nutze die Erklärungen für die korrekten Antworten, um auch aus deinen Fehlern lernen zu können. Du kannst eigene Bilder hochladen und diese Filtern. Achte dabei jedoch darauf, keine zu hohen Auflösungen zu nutzen, weil die Berechnung dadurch länger dauert. Du kannst aber auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> ein Beispielbild auswählen. Probiere beispielsweise folgende Dinge aus:
+Nutze nun selbst das Filter Tool "MyPicFilter", um die vorgestellten Filter in Aktion zu sehen. Versuche anschließend die Quizfragen aus dem Abschlussquiz zu beantworten. Auch hier sind falsche Antworten nicht schlimm. Nutze die Erklärungen für die korrekten Antworten, um auch aus deinen Fehlern lernen zu können. Du kannst eigene Bilder hochladen und diese Filtern. Achte dabei jedoch darauf, keine zu hohen Auflösungen zu nutzen, weil die Berechnung dadurch länger dauert. Du kannst aber auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> ein Beispielbild auswählen. Probiere beispielsweise folgende Dinge aus:
 
 * Lade ein Bild hoch. Nutze nun die verschiedenen Filter und schau dir die Ergebnisse an.
 * Nutze ein und den selben Filter aber veränder die Filtergröße/den Radius.
@@ -273,50 +162,6 @@ Nutze nun selbst das Filter Tool "MyPicFilter", um die vorgestellten Filter in A
 * Lade ein Bild hoch und wende Gauß-Rauschen darauf an. Nutze nun die verschiedenen Filter.
 
 ??[MyPicCoder](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicFilter.html)
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Quiz
-=================================================================================================================================================================================
-
-1. Welche Filter eignen sich um Salz-und-Pfeffer-Rauschen zu verringern?
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<!-- data-randomize -->
-- [[X]] Median-Filter
-- [[ ]] Mittelwert-Filter
-- [[ ]] Gauß-Filter
-*********************************************************************************************************************************************************************************
-Der Median Filter eignet sich für diesen Fall am besten. Die Pixel werden zunächst der Größe nach sortiert und dadurch wandern annähernd schwarze und annähernd weiße Pixel an die äußeren Ränder. Extreme Werte, können dadurch also eliminiert werden. Beim Mittelwert-Filter und Gauß-Filter werden diese extremen Pixelwerte mit in die Berechnung einfließen.
-*********************************************************************************************************************************************************************************
-
-2. Welche Filter eignen sich um Gauß-Rauschen zu verringern?
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<!-- data-randomize -->
-- [[ ]] Median-Filter
-- [[X]] Mittelwert-Filter
-- [[X]] Gauß-Filter
-*********************************************************************************************************************************************************************************
-Sowohl der Mittelwert-Filter als auch der Gauß-Filter eignen sich um Gauß-Rauschen im Bild zu verringern. In beiden Fällen wird das Bild "geglättet", indem die Werte der benachbarten Pixel mit einbezogen werden. Dadurch sollen starke unterschiede zwischen Nachbarpixeln behoben werden.
-*********************************************************************************************************************************************************************************
-
-3. Welche Aussagen treffen zu?
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-<!-- data-randomize -->
-- [[X]] Je Größer der Radius, desto länger dauert die Berechnung des Ausgabebilds.
-- [[ ]] Filter laufen schneller über Farbbilder als über Grauwertbilder.
-- [[X]] An den Rändern der Bilder gehen Informationen verloren.
-- [[ ]] Der Gauß-Filter "verschmiert" Bilder stärker als der "Mittelwert-Filter".
-- [[X]] Kanten bleiben bei der Anwendung des Medianfilters weitestgehend erhalten.
-*********************************************************************************************************************************************************************************
-Je Größer der Radius eines Filters, desto mehr Pixel werden für jeden Berechnungsschritt mit in betracht gezogen. Dadurch ist der Rechenaufwand höher und die Berechnung dauert meist länger. 
-
-Bei Farbbildern müssen drei Kanäle gefiltert werden, was dazu führt, dass auch hier die Berechnung länger dauert, als bei einfachen Grauwertbildern, bei denen nur ein Kanal gefiltert werden muss.
-
-An den Rändern von Bildern gehen bei den meisten Filtern Informationen verloren, weil der Filterbereich dort, über die Ränder hinaus ragt und dadurch Informationen für die neuen Randpixelwerte fehlen. Durch Tricks wie der Wiederhohlung des Randpixels oder der Spiegelung am Rand wird versucht, diesen Informationsverlust zu verstecken.
-
-Mittelwert-Filter "verschmieren" Bilder stärker als Gauß-Filter, weil diese alle Pixel gleich stark gewichten, egal wie weit diese von dem aktuellen Pixel entfernt sind.
-
-Kanten bleiben bei der Anwendung des Medianilters weitestgehend erhalten und können lediglich verschoben werden. Da die Werte aber nicht gemittelt werden, werden die Kanten an sich aber nicht geglättet.
-*********************************************************************************************************************************************************************************
 
 ## MyPicFilter Anleitung
 <div class="instruction">
@@ -369,3 +214,45 @@ Kanten bleiben bei der Anwendung des Medianilters weitestgehend erhalten und kö
         <img src="../Images/Tools/MyPicFilter/MyPicFilter_menu_gaussian_filter.png">
     </p>
 </div>
+
+# Abschlussquiz
+
+1. Welche Filter eignen sich um Salz-und-Pfeffer-Rauschen zu verringern?
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- data-randomize -->
+- [[X]] Median-Filter
+- [[ ]] Mittelwert-Filter
+- [[ ]] Gauß-Filter
+*********************************************************************************************************************************************************************************
+Der Median Filter eignet sich für diesen Fall am besten. Die Pixel werden zunächst der Größe nach sortiert und dadurch wandern annähernd schwarze und annähernd weiße Pixel an die äußeren Ränder. Extreme Werte, können dadurch also eliminiert werden. Beim Mittelwert-Filter und Gauß-Filter werden diese extremen Pixelwerte mit in die Berechnung einfließen.
+*********************************************************************************************************************************************************************************
+
+2. Welche Filter eignen sich um Gauß-Rauschen zu verringern?
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- data-randomize -->
+- [[ ]] Median-Filter
+- [[X]] Mittelwert-Filter
+- [[X]] Gauß-Filter
+*********************************************************************************************************************************************************************************
+Sowohl der Mittelwert-Filter als auch der Gauß-Filter eignen sich um Gauß-Rauschen im Bild zu verringern. In beiden Fällen wird das Bild "geglättet", indem die Werte der benachbarten Pixel mit einbezogen werden. Dadurch sollen starke unterschiede zwischen Nachbarpixeln behoben werden. 
+*********************************************************************************************************************************************************************************
+
+3. Welche Aussagen treffen zu?
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<!-- data-randomize -->
+- [[X]] Je Größer der Radius, desto länger dauert die Berechnung des Ausgabebilds.
+- [[ ]] Filter laufen schneller über Farbbilder als über Grauwertbilder.
+- [[X]] An den Rändern der Bilder gehen Informationen verloren.
+- [[ ]] Der Gauß-Filter "verschmiert" Bilder stärker als der "Mittelwert-Filter".
+- [[X]] Kanten bleiben bei der Anwendung des Medianfilters weitestgehend erhalten.
+*********************************************************************************************************************************************************************************
+Je Größer der Radius eines Filters, desto mehr Pixel werden für jeden Berechnungsschritt mit in betracht gezogen. Dadurch ist der Rechenaufwand höher und die Berechnung dauert meist länger. 
+
+Bei Farbbildern müssen drei Kanäle gefiltert werden, was dazu führt, dass auch hier die Berechnung länger dauert, als bei einfachen Grauwertbildern, bei denen nur ein Kanal gefiltert werden muss.
+
+An den Rändern von Bildern gehen bei den meisten Filtern Informationen verloren, weil der Filterbereich dort, über die Ränder hinaus ragt und dadurch Informationen für die neuen Randpixelwerte fehlen. Durch Tricks wie der Wiederhohlung des Randpixels oder der Spiegelung am Rand wird versucht, diesen Informationsverlust zu verstecken.
+
+Mittelwert-Filter "verschmieren" Bilder stärker als Gauß-Filter, weil diese alle Pixel gleich stark gewichten, egal wie weit diese von dem aktuellen Pixel entfernt sind.
+
+Kanten bleiben bei der Anwendung des Medianilters weitestgehend erhalten und können lediglich verschoben werden. Da die Werte aber nicht gemittelt werden, werden die Kanten an sich aber nicht geglättet.
+*********************************************************************************************************************************************************************************
