@@ -44,7 +44,7 @@ Quiz
 Das Wort "Pixel" steht für "picture element" (Bildelement) und beschreibt das keinste Element in einer Pixel-/Rastergrafik.
 *********************************************************************************************************************************************************************************
 
-2. Welcher Begriff beschreibt die Anzahl der Helligkeitswerten, die ein Pixel in einer Pixel-/Rastergrafik annehmen kann?
+2. Welcher Begriff beschreibt die Anzahl der Helligkeitswerte, die ein Pixel in einer Pixel-/Rastergrafik annehmen kann?
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 <!-- data-randomize -->
 - [( )] Transparenz
