@@ -65,11 +65,11 @@ Dieses Projekt eignet sich für ~1-3 Personen. Arbeitet allein oder mit bis zu z
 * Entscheided euch, welches Thema euch am meisten interessiert hat.
 * Nun überlegt, ob ihr das Thema nochmals selbst zusammenfassen möchtet oder sogar neue Informationen zu einem Thema sammeln wollt.
 * Mögliche neue Informationen zu den Themen sind:
-    
-    * **Rastergrafik:** Wie können Bilder komprimiert werden, damit sie weniger speicher verbrauchen? (Stichworte: Lauflängenkodierung, verlustfreie VS. verlustbehaftete Kompression)
-    * **Vektorgrafik:** Was ist unter einer Bézierkurve zu verstehen? (Stichworte: Bézierkurve, De-Casteljau-Algorithmus)
-    * **Filter:** Welche anderen Filter gibt es und was bewirken diese? (Stichworte: Sobel-Operator, Min-/Max-Filter)
-    * **Terrain:** Kann man die Erstellung von Heightmaps automatisieren? (Stichworte: Diamond-Square-Algorithmus)
+
+  - **Rastergrafik:** Wie können Bilder komprimiert werden, damit sie weniger speicher verbrauchen? (Stichworte: Lauflängenkodierung, verlustfreie VS. verlustbehaftete Kompression)
+  - **Vektorgrafik:** Was ist unter einer Bézierkurve zu verstehen? (Stichworte: Bézierkurve, De-Casteljau-Algorithmus)
+  - **Filter:** Welche anderen Filter gibt es und was bewirken diese? (Stichworte: Sobel-Operator, Min-/Max-Filter)
+  - **Terrain:** Kann man die Erstellung von Heightmaps automatisieren? (Stichworte: Diamond-Square-Algorithmus)
 
 
 # MyPicCoder
