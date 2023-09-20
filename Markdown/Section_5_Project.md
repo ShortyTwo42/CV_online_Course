@@ -42,7 +42,7 @@ Dieses Projekt eignet sich für ~3-4 Personen. Findet euch also am besten in ein
 
 
 # Projekt: Fotografie
-Dieses Projekt eignet sich für ~2-3 Personen. Findet euch also am besten in einer Gruppe zusammen. Besonders Rastergrafiken waren interessant für euch? Dann ist dieses Projekt möglicherweise das richtige für euch. Folgendes ist zu tun:
+Dieses Projekt eignet sich für ~2-3 Personen. Findet euch also am besten in einer Gruppe zusammen. Besonders Rastergrafiken waren interessant für euch? Dann ist dieses Projekt möglicherweise das Richtige für euch. Folgendes ist zu tun:
 
 * Fragt zunächst, ob ihr euer Handy oder eine Kamera zum aufnehmen von Fotos benutzen dürft.
 * Schaut nun nach interessanten Motiven, die man fotografieren kann. Mögliche Motive wären Portraits oder Objekte mit starken Helligkeitsunterschieden. Am besten fotografiert ihr in schwarz-weiß.
@@ -51,7 +51,7 @@ Dieses Projekt eignet sich für ~2-3 Personen. Findet euch also am besten in ein
 
 
 # Projekt: Eigene Aufgaben
-Dieses Projekt eignet sich für ~1-2 Personen. Arbeitet am besten allein oder mit einer anderen Person aus eurer Klasse zusammen. Euch haben die Aufgaben besonders viel Spaß gemacht oder ihr denkt, dass es noch interessante aufgaben geben könnte? Dann ist dieses Projekt wahrscheinlich das richtige für euch. Folgendes ist zu tun:
+Dieses Projekt eignet sich für ~1-2 Personen. Arbeitet am besten allein oder mit einer anderen Person aus eurer Klasse zusammen. Euch haben die Aufgaben besonders viel Spaß gemacht oder ihr denkt, dass es noch interessante Aufgaben geben könnte? Dann ist dieses Projekt wahrscheinlich das Richtige für euch. Folgendes ist zu tun:
 
 * Überlegt euch selbst sinnvolle Aufgaben, die man mit den verschiedenen Tools bearbeiten könnte. Stellt euch dabei auch immer vor, was man aus einer solchen Aufgabe lernen kann, oder wie man dadurch Wissen vertiefen kann. 
 * Geht dabei möglicherweise die alten Aufgaben für die einzelnen Tools durch. Könnte man einige davon variieren?
