@@ -10,7 +10,7 @@ language:   de
 narrator:   Deutsch Female
 
 comment:    Dies ist die Sandbox für den
-            CV Online Kurs. Alle Tools, die für
+            CV-Online-Kurs. Alle Tools, die für
             den Kurs entwickelt wurden werden 
             hier aufgelistet und beschrieben
 
@@ -23,7 +23,7 @@ logo:       ../Images/Tools/Sandbox_Logo.png
 -->
 
 # Sandbox
-Hier sind alle Tools zu finden, die für den CV Online Kurs entwickelt wurden
+Hier sind alle Tools zu finden, die für den CV-Online-Kurs entwickelt wurden
 (Auf Github hochgeladen)
  
 ## MyPicCoder

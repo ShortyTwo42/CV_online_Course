@@ -10,7 +10,7 @@ language:   de
 narrator:   Deutsch Female
 
 comment:    Dies ist die fünfte und letzte Lektion 
-            des CV Online Kurses. Hier soll ein
+            des CV-Online-Kurses. Hier soll ein
             eigenes kleines Projekt realisiert werden.
 
 link:       ../CSS/main.css 
@@ -22,7 +22,7 @@ logo:       ../Images/Project/Project_Logo.png
 -->
 
 # Lektion 5: Eigenes Projekt
-Willkommen zur letzten Lektion des CV Online Kurses. Du hast in den vorherigen Lektionen bereits einiges lernen können. In dieser Lektion sollst du nun selbst kreativ werden und das Gelernte anwenden. Dafür kannst du dich auch mit anderen Personen aus deiner Klasse zusammenfinden. Die einzelnen Tools sind nochmals auf einzelnen Seiten zugänglich. Hier sind ein paar Vorschläge für ein Abschlussprojekt, dass du allein oder mit anderen durchführen kannst. Zu jeder dieser Projektideen gibt es zudem eine eigene Seite, in diesem Kurs, die Anregungen zu den einzelnen Projekten gibt.
+Willkommen zur letzten Lektion des CV-Online-Kurses. Du hast in den vorherigen Lektionen bereits einiges lernen können. In dieser Lektion sollst du nun selbst kreativ werden und das Gelernte anwenden. Dafür kannst du dich auch mit anderen Personen aus deiner Klasse zusammenfinden. Die einzelnen Tools sind nochmals auf einzelnen Seiten zugänglich. Hier sind ein paar Vorschläge für ein Abschlussprojekt, dass du allein oder mit anderen durchführen kannst. Zu jeder dieser Projektideen gibt es zudem eine eigene Seite, in diesem Kurs, die Anregungen zu den einzelnen Projekten gibt.
 
 1. Entwerft eine eigene Fantasywelt. Erstellt ein Logo oder Wappen mit einer Vektorgrafik, erstellt eine Height und Texturemap mit dem Terrain Tool. Optimiert eure Height und Texturemap möglicherweise mit dem Filtertool. [~3-4 Personen]
 2. Fragt, ob ihr euer Handy für Fotos benutzen dürft. Nehmt verschiedene Bilder auf, am besten in schwarz-weiß. Was passiert, wenn ihr diese als Heightmap benutzt? Überlegt euch interessante Motive und lasst die Filter darüber laufen. Was passiert beispielsweise, wenn ihr Filter auf Bilder mit starken Helligkeitsunterschieden aufnehmt? [~2-3 Personen]

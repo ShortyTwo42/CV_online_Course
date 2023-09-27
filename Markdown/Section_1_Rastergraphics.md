@@ -10,7 +10,7 @@ language:   de
 narrator:   Deutsch Female
 
 comment:    Dies ist die erste Lektion des
-            CV Online Kurses. Verschiedene Formate 
+            CV-Online-Kurses. Verschiedene Formate 
             und Nutzen von Pixel-/Rastergrafiken 
             werden hier vorgestellt.
 
@@ -23,7 +23,7 @@ logo:       ../Images/Rastergraphics/Rastergraphics_Logo.png
 -->
 
 # Lektion 1: Pixel-/Rastergrafik
-Willkommen zur ersten Lektion des CV Online Kurses. In dieser Lektion lernst du mehr über den Aufbau von Pixel-/Rastergrafiken. Außerdem sollst du am Ende dieser Lektion in der Lage sein erste eigene Bilddateien selber zu erstellen.
+Willkommen zur ersten Lektion des CV-Online-Kurses. In dieser Lektion lernst du mehr über den Aufbau von Pixel-/Rastergrafiken. Außerdem sollst du am Ende dieser Lektion in der Lage sein erste eigene Bilddateien selber zu erstellen.
 
 # Was ist eine Pixel-/Rastergrafik?
 Gängige Bildformate wie **JPG** oder **PNG** verwenden ein Raster, um sogenannte **Picture Elements**, kurz **"Pixel"**, anzuordnen. Jeder Pixel enthält eine codierte Farbwertinformation. Die wichtigsten Eigenschaften eines solchen codierten Bildes sind **Höhe**, **Breite** und **Farbtiefe**. Die **Farbtiefe** gibt an, wie viele Abstufungen von Helligkeitswerten möglich sind. Dadurch gibt sie auch an, wie viele **Bits** benötigt werden, um den Farbwert zu codieren. Ein **Bit** ist die kleinste Informationseinheit in der Informatik und nimmt entweder den Wert *"1"* oder *"0"* an. Binärbilder erlauben beispielsweise nur schwarze oder weiße Pixel. Deshalb ist ein **Bit** ausreichend um den Wert eines jeden darin vorkommenden Pixels zu speichern. Bei Grauwertbildern können verschiedene Grautöne zwischen Schwarz und Weiß dargestellt werden. Normalerweise werden 8 **Bit** (= 1 **Byte**) dafür verwendet. Während mit 1 **Bit** nur 2<sup>1</sup>, also 2 Werte gespeichert werden können, kann man mit 8 **Bit** 2<sup>8</sup> ganze 256 Abstufungen erziehlen. Schließlich können Farbbilder durch das anteilige Mischen der Farben Rot, Grün und Blau erzeugt werden, hierbei kann jeder einzelne Farbkanal mit 1 **Byte** codiert werden.

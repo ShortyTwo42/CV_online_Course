@@ -10,7 +10,7 @@ language:   de
 narrator:   Deutsch Female
 
 comment:    Dies ist die vierte Lektion des
-            CV Online Kurses. Hier werden 
+            CV-Online-Kurses. Hier werden 
             simple 3D Meshes in Form von Terrains
             näher erklärt.
 
@@ -23,7 +23,7 @@ logo:       ../Images/Terrain/Terrain_Logo.png
 -->
 
 # Lektion 4: Terrain
-Willkommen zur vierten Lektion des CV Online Kurses. In dieser soll dir ein Grundverständnis für virtuelle Terrains vermittelt werden. Besonders der Einsatz von Heightmaps und die Texturierung von Terrains sollen dir näher gebracht werden.
+Willkommen zur vierten Lektion des CV-Online-Kurses. In dieser soll dir ein Grundverständnis für virtuelle Terrains vermittelt werden. Besonders der Einsatz von Heightmaps und die Texturierung von Terrains sollen dir näher gebracht werden.
 
 # Wiederholungsquiz: "Filter"
 In diesem kleinen Wiederholungsquiz kannst du deinen eigenen Wissensstand zum Thema "Filter" nochmals überprüfen. Auch falsche Antworten können dir helfen das gelernte zu festigen, indem du die Erklärung für die korrekte Antwort nochmal verinnerlichst. Hast du eine falsche Antwort angegeben und möchtest es nicht nochmals versuchen, kannst du dir über das Häkchen die Lösung anzeigen lassen.

@@ -10,7 +10,7 @@ language:   de
 narrator:   Deutsch Female
 
 comment:    Dies ist die dritte Lektion des
-            CV Online Kurses. Funktionsweise
+            CV-Online-Kurses. Funktionsweise
             und Nutzen von Filtern wird hier 
             näher erläutert.
 
@@ -23,7 +23,7 @@ logo:       ../Images/Filter/Filter_Logo.png
 -->
 
 # Lektion 3: Filter
-Willkommen zur dritte Lektion des CV Online Kurses. In dieser Lektion wird dir die Funktionsweise verschiedener Filter vorgestellt. Am Ende dieser Lektion sollst du verstehen, wie ein Median-, Mittelwert- und Gauß-Filter funktionieren und was deren Einsatzbereiche sind.
+Willkommen zur dritte Lektion des CV-Online-Kurses. In dieser Lektion wird dir die Funktionsweise verschiedener Filter vorgestellt. Am Ende dieser Lektion sollst du verstehen, wie ein Median-, Mittelwert- und Gauß-Filter funktionieren und was deren Einsatzbereiche sind.
 
 # Wiederholungsquiz: "Vektorgrafik"
 In diesem kleinen Wiederholungsquiz kannst du deinen eigenen Wissensstand zum Thema "Vektorgrafiken" nochmals überprüfen. Auch falsche Antworten können dir helfen das gelernte zu festigen, indem du die Erklärung für die korrekte Antwort nochmal verinnerlichst. Hast du eine falsche Antwort angegeben und möchtest es nicht nochmals versuchen, kannst du dir über das Häkchen die Lösung anzeigen lassen.
