@@ -129,6 +129,8 @@ Das **Portable Pixmap (PPM)** Format ist für die Erstellung von Farbbildern gee
 > ![ppmOverview](../Images/Rastergraphics/PPM_Overview.png)
 
 # Erstelle ein eigenes Bild
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Erstelle nun eigene Bilder mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor, um dein Bild in einem der drei Vorgestellten Formate zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
 
 * Der eigene Name
@@ -167,6 +169,7 @@ Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-
         <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Änderungen im Editor werden also in Echtzeit auch in der Vorschau gezeigt. Die Live-Vorschau kann jederzeit an und ausgeschaltet werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann das Code Symbol geklickt werden, um die Vorschau manuell zu aktualisieren.</li>
         </ul>
@@ -234,6 +237,8 @@ Zuletzt können wir noch eine **"Bedingung"** einbauen, mit der wir bestimmen, w
 
 
 ## Programmierbeispiel: PutPixel
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Versuche es nun selbst mithilfe des PutPixel Tools. Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. 
 Mögliche Aufgaben wären:
 
@@ -266,7 +271,9 @@ Mögliche Aufgaben wären:
     </p>
     <p>
         Rechts im Header sehen wir das Code Icon.
+        <p><img src="../Images/Tools/PutPixel/PutPixel_header_right.png"></p>
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Wird dieses Angeklickt, wird das Programm aus dem Editor zunächst überprüft (ob dieses auch nur zugelassene Funktionen beinhaltet), und anschließend ausgeführt.</li>
        </ul> 
     </p>

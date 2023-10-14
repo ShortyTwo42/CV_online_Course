@@ -102,6 +102,8 @@ Das **Portable Graymap (PGM)** Format ist für die Erstellung von Grauwertbilder
 > ![pgmOverview](../Images/Rastergraphics/PGM_Overview.png)
 
 ## Erstelle ein eigenes Bild
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Erstelle nun eigene Bilder mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor, um dein Bild in einem der drei Vorgestellten Formate zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
 
 * Der eigene Name
@@ -140,6 +142,7 @@ Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-
         <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Änderungen im Editor werden also in Echtzeit auch in der Vorschau gezeigt. Die Live-Vorschau kann jederzeit an und ausgeschaltet werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann das Code Symbol geklickt werden, um die Vorschau manuell zu aktualisieren.</li>
         </ul>
@@ -256,6 +259,8 @@ Polygone sind Polylines sehr ähnlich. Der Hauptunterschied ist, dass automatisc
 
 
 ## Erstelle ein eigenes SVG
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Erstelle nun ein eigenes SVG mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor um ein SVG zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
 
 * Ein einfaches Emoji
@@ -294,6 +299,7 @@ Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-
         <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Änderungen im Editor werden also in Echtzeit auch in der Vorschau gezeigt. Die Live-Vorschau kann jederzeit an und ausgeschaltet werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann das Code Symbol geklickt werden, um die Vorschau manuell zu aktualisieren.</li>
         </ul>
@@ -360,6 +366,8 @@ In diesem Abschnitt, sollst du nun selbst versuchen den neuen Pixelwert eines Ei
 ??[CalcFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/CalcFilter.html)
 
 ## Probiere selbst die vorgestellten Filter aus
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Nutze nun selbst das Filter Tool "MyPicFilter", um die vorgestellten Filter in Aktion zu sehen. Versuche anschließend die Quizfragen aus dem Abschlussquiz zu beantworten. Auch hier sind falsche Antworten nicht schlimm. Nutze die Erklärungen für die korrekten Antworten, um auch aus deinen Fehlern lernen zu können. Du kannst eigene Bilder hochladen und diese Filtern. Achte dabei jedoch darauf, keine zu hohen Auflösungen zu nutzen, weil die Berechnung dadurch länger dauert. Du kannst aber auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> ein Beispielbild auswählen. Probiere beispielsweise folgende Dinge aus:
 
 * Lade ein Bild hoch. Nutze nun die verschiedenen Filter und schau dir die Ergebnisse an.
@@ -400,6 +408,7 @@ Nutze nun selbst das Filter Tool "MyPicFilter", um die vorgestellten Filter in A
         <p><img src="../Images/Tools/MyPicFilter/MyPicFilter_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/play-solid.svg" width="20" height="20"> Durch Klicken auf das Play Icon wird der aktuell ausgewählte Filter auf das Eingabebild angewandt und dadurch das Ausgabebild erzeugt.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/table-cells-solid.svg" width="20" height="20"> Durch Klicken auf das Filter Icon wird das Filtermenü geöffnet (zu diesem kommen wir später).</li>
         </ul>
@@ -506,6 +515,8 @@ Doch nicht nur Höhenwerte können in Texturen gespeichert werden. In sogenannte
 > !?[TerrainVideo](https://youtu.be/d5l9ln9e1Mg)
 
 ## Erstelle ein eigenes Terrain
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das zeichnen und bearbeiten einer Height- sowie dessen Texturemap zu erstellen. Beobachte dabei, wie sich deine Änderungen an den beiden Texturen auf das virtuelle Terrain auswirken. Versuche anschließend die Quizfragen aus dem Abschlussquiz zu beantworten. Auch hier sind falsche Antworten nicht schlimm. Nutze die Erklärungen für die korrekten Antworten, um auch aus deinen Fehlern lernen zu können. Du kannst über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> eine Beispiele auswählen. Wechsel durch klicken auf <img src="../CSS/fontawesome/downloaded_svgs/image-solid.svg" width="20" height="20"> zwischen dem Heightmap Modus und dem Texturemap Modus, um auch deren spezifische Beispiele hochzuladen. Probiere beispielsweise folgende Dinge aus:
 
 * Zeichne zunächst mit den Standardwerten eine Height- und eine Texturemap. Erkunde das Tool ein wenig und mach dich mit den Funktionen vertraut
@@ -514,7 +525,7 @@ Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das 
 ??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyTerrainCreator.html)
 
 ### MyTerrainCreator Anleitung
-<div>
+<div class="instruction">
     <p>
         Das Tool **"MyTerrainCreator"** ist in zwei Abschnitte aufgeteilt. Links kann sowohl die **"Heightmap"** als auch die **"Texturemap"** des Terrains bearbeitet werden, indem auf diese gemalt wird. Rechts ist das Terrain zu sehen, das durch die Bearbeitung der beiden Texturen Form und Farbe annimmt. Im Zeichenbereich ist es möglich mittels des Scrollrads der Maus zu zoomen. Durch Rechtsklick und bewegen der Maus kann über das Bild geschwenkt werden. Durch Linksklick und bewegen der Maus kann gemalt werden. Auch in der Vorschau kann man mit dem Mausrad zoomen und mit Linksklick und bewegen der Maus kann die Kameraposition verändert werden.
         <img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_overview.png">
@@ -542,6 +553,7 @@ Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das 
         <p><img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Das heißt, dass alle Änderungen an den Texturen direkt in der Terrain-Vorschau angezeigt werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/play-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann man die Änderungen durch Klicken auf das Play Icon manuell aktualisieren.</li>
         </ul>

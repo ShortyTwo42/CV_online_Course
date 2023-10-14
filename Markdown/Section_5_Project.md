@@ -73,6 +73,8 @@ Dieses Projekt eignet sich für ~1-3 Personen. Arbeitet allein oder mit bis zu z
 
 
 # MyPicCoder
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Der **"MyPicCoder"** wurde als Alternative zum Tool **"CodeMyPic"** entwickelt. Es können folgende Grafikdateien erstellt werden:
 
 * Portable Bitmap (*.pbm)
@@ -110,6 +112,7 @@ Der **"MyPicCoder"** wurde als Alternative zum Tool **"CodeMyPic"** entwickelt. 
         <p><img src="../Images/Tools/MyPicCoder/MyPicCoder_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Änderungen im Editor werden also in Echtzeit auch in der Vorschau gezeigt. Die Live-Vorschau kann jederzeit an und ausgeschaltet werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann das Code Symbol geklickt werden, um die Vorschau manuell zu aktualisieren.</li>
         </ul>
@@ -121,6 +124,8 @@ Der **"MyPicCoder"** wurde als Alternative zum Tool **"CodeMyPic"** entwickelt. 
 </div>
 
 # PutPixel
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die Möglichkeit zu geben mithilfe der Funktion **"putPixel()"** **"For-Schleifen"** sowie **"If-Abfragen"** besser zu verstehen:
 
 ??[PutPixel](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/PutPixel.html)
@@ -148,13 +153,17 @@ Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die M�
     </p>
     <p>
         Rechts im Header sehen wir das Code Icon.
+        <p><img src="../Images/Tools/PutPixel/PutPixel_header_right.png"></p>
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/code-solid.svg" width="20" height="20"> Wird dieses Angeklickt, wird das Programm aus dem Editor zunächst überprüft (ob dieses auch nur zugelassene Funktionen beinhaltet), und anschließend ausgeführt.</li>
        </ul> 
     </p>
 </div>
 
 # MyPicFilter
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 **"MyPicFilter"** wurde als Tool entwickelt um die Auswirkungen verschiedener Filter auf Eingabebilder zu verdeutlichen:
 
 ??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyPicFilter.html)
@@ -190,6 +199,7 @@ Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die M�
         <p><img src="../Images/Tools/MyPicFilter/MyPicFilter_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/play-solid.svg" width="20" height="20"> Durch Klicken auf das Play Icon wird der aktuell ausgewählte Filter auf das Eingabebild angewandt und dadurch das Ausgabebild erzeugt.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/table-cells-solid.svg" width="20" height="20"> Durch Klicken auf das Filter Icon wird das Filtermenü geöffnet (zu diesem kommen wir später).</li>
         </ul>
@@ -213,12 +223,14 @@ Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die M�
 
 
 # MyTerrainCreator
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 **"MyTerrainCreator"** wurde als Tool entwickelt um interaktiv **"Heightmaps"** sowie **"Texturemaps"** zu erstellen und direkt die Auswirkung auf ein virtuelles Terrain zu erkennen.
 
 ??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyTerrainCreator.html)
 
 ## MyTerrainCreator Anleitung
-<div>
+<div class="instruction">
     <p>
         Das Tool **"MyTerrainCreator"** ist in zwei Abschnitte aufgeteilt. Links kann sowohl die **"Heightmap"** als auch die **"Texturemap"** des Terrains bearbeitet werden, indem auf diese gemalt wird. Rechts ist das Terrain zu sehen, das durch die Bearbeitung der beiden Texturen Form und Farbe annimmt. Im Zeichenbereich ist es möglich mittels des Scrollrads der Maus zu zoomen. Durch Rechtsklick und bewegen der Maus kann über das Bild geschwenkt werden. Durch Linksklick und bewegen der Maus kann gemalt werden. Auch in der Vorschau kann man mit dem Mausrad zoomen und mit Linksklick und bewegen der Maus kann die Kameraposition verändert werden.
         <img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_overview.png">
@@ -246,6 +258,7 @@ Das **"PutPixel"** Tool wurde entwickelt, um den Teilnehmenden des Kurses die M�
         <p><img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Das heißt, dass alle Änderungen an den Texturen direkt in der Terrain-Vorschau angezeigt werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/play-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann man die Änderungen durch Klicken auf das Play Icon manuell aktualisieren.</li>
         </ul>

@@ -132,6 +132,8 @@ Eine andere Art der Optimierung, bezieht sich besonders auf weitläufiges Terrai
 > !?[TerrainOptimizationVideo](https://youtu.be/F9XKUwhV-O4)
 
 # Erstelle ein eigenes Terrain
+> WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
+
 Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das zeichnen und bearbeiten einer Height- sowie dessen Texturemap zu erstellen. Beobachte dabei, wie sich deine Änderungen an den beiden Texturen auf das virtuelle Terrain auswirken. Versuche anschließend die Quizfragen aus dem Abschlussquiz zu beantworten. Auch hier sind falsche Antworten nicht schlimm. Nutze die Erklärungen für die korrekten Antworten, um auch aus deinen Fehlern lernen zu können. Du kannst über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> eine Beispiele auswählen. Wechsel durch klicken auf <img src="../CSS/fontawesome/downloaded_svgs/image-solid.svg" width="20" height="20"> zwischen dem Heightmap Modus und dem Texturemap Modus, um auch deren spezifische Beispiele hochzuladen. Probiere beispielsweise folgende Dinge aus:
 
 * Zeichne zunächst mit den Standardwerten eine Height- und eine Texturemap. Erkunde das Tool ein wenig und mach dich mit den Funktionen vertraut
@@ -140,7 +142,7 @@ Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das 
 ??[MyPicFilter](https://shortytwo42.github.io/InteractiveCodingTools/InteractiveCodingTools/HTML/MyTerrainCreator.html)
 
 ## MyTerrainCreator Anleitung
-<div>
+<div class="instruction">
     <p>
         Das Tool **"MyTerrainCreator"** ist in zwei Abschnitte aufgeteilt. Links kann sowohl die **"Heightmap"** als auch die **"Texturemap"** des Terrains bearbeitet werden, indem auf diese gemalt wird. Rechts ist das Terrain zu sehen, das durch die Bearbeitung der beiden Texturen Form und Farbe annimmt. Im Zeichenbereich ist es möglich mittels des Scrollrads der Maus zu zoomen. Durch Rechtsklick und bewegen der Maus kann über das Bild geschwenkt werden. Durch Linksklick und bewegen der Maus kann gemalt werden. Auch in der Vorschau kann man mit dem Mausrad zoomen und mit Linksklick und bewegen der Maus kann die Kameraposition verändert werden.
         <img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_overview.png">
@@ -168,6 +170,7 @@ Nutze nun das Terrain Tool "MyTerrainCreator", um ein eigenes Terrain durch das 
         <p><img src="../Images/Tools/MyTerrainCreator/MyTerrainCreator_header_right.png"></p>
         Die Icons bedeuten folgendes von links nach rechts:
         <ul>
+            <li><img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Über das Info-Icon können Tutorials aufgerufen werden, die einen durch das Tool leiten.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/slider.svg" width="20" height="20"> Der Slider ist zu Beginn angeschaltet. Das bedeutet, dass die Live-Vorschau aktiviert ist. Das heißt, dass alle Änderungen an den Texturen direkt in der Terrain-Vorschau angezeigt werden.</li>
             <li><img src="../CSS/fontawesome/downloaded_svgs/play-solid.svg" width="20" height="20"> Ist die Live-Vorschau ausgeschaltet, kann man die Änderungen durch Klicken auf das Play Icon manuell aktualisieren.</li>
         </ul>
