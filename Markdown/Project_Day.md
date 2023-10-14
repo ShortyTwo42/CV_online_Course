@@ -261,10 +261,79 @@ Polygone sind Polylines sehr ähnlich. Der Hauptunterschied ist, dass automatisc
 ## Erstelle ein eigenes SVG
 > WICHTIG: Über das <img src="../CSS/fontawesome/downloaded_svgs/circle-info-solid.svg" width="20" height="20"> Icon kannst du dir ein Tutorial zu dem Tool ansehen. Dort werden dir alle wichtigen Funktionen vorgestellt. Auch findet sich auf der folgenden Seite eine Anleitung zu dem Tool.
 
+Um dich in das Tool einzufinden versuche zunächst folgende Aufgabe Schritt für Schritt zu lösen. Schau dir die Auflösung erst an, nachdem du einen Punkt bearbeitet hast.
+
+1. Lade aus den Beispielen das Haus als SVG Datei hoch.
+    <details>
+    <summary>Auflösung</summary>
+    
+    <ul class="no-bulletpoints">
+    <li>1. Klicke dazu zunächst auf das <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> Icon.</li>
+    <li>2. Dort wählst du als Bildtyp "SVG" aus.</li>
+    <li>3. Wähle nun das Haus aus und lade hoch.</li>
+    </ul>
+
+    Nach diesem Schritt sollte dies dein Ergebnis sein:
+    <img src="../Images/Tasks/Vectorgraphics/House_To_Letter_1.png">
+    </details>
+2. Entferne nun Fenster und Tür des Hauses.
+    <details>
+    <summary>Auflösung</summary>
+    
+    <ul class="no-bulletpoints">
+    <li>Um das Fenster und die Tür zu entfernen können die Zeilen 7 bis 12 gelöscht werden.</li>
+    </ul>
+
+    Nach diesem Schritt sollte dies dein Ergebnis sein:
+    <img src="../Images/Tasks/Vectorgraphics/House_To_Letter_2.png">
+    </details>
+3. Färbe nun das Dach und die Hauswand weiß.
+    <details>
+    <summary>Auflösung</summary>
+    
+    <ul class="no-bulletpoints">
+    <li>Um die Farbe der Geometrien zu ändern muss das "fill" Attribut angepasst werden.</li>
+    <li>Dafür kann entweder der RGB Wert "rgb(255, 255, 255)" eingefügt werden</li>
+    <li>oder "fill" wird gleich "white" gesetzt.</li>
+    <li>Dies sind beispielhafte Änderungen, die zu dem gewünschten Ergebnis führen:</li>
+    <li><img src="../Images/Tasks/Vectorgraphics/House_To_Letter_3_1.png"></li>
+    </ul>
+
+    Nach diesem Schritt sollte dies dein Ergebnis sein:
+    <img src="../Images/Tasks/Vectorgraphics/House_To_Letter_3_2.png">
+    </details>
+4. Sorge nun dafür, dass das Dach so breit ist, wie die Hauswand.
+    <details>
+    <summary>Auflösung</summary>
+    
+    <ul class="no-bulletpoints">
+    <li>Hierfür müssen die Koordinaten des Polygon-Tags angepasst werden.</li>
+    <li>Jeweils zwei aufeinanderfolgende Zahlen im "points" Attribut beschreiben die X- und Y-Koordinate eines Punktes des Polygons.</li>
+    <li>Die Koordinate "20,80" wird so angepasst, dass deren X-Koordinate weiter nach rechts verschoben wird. Die Koordinaten "40,80" sorgen für das gewünschte Ergebnis.</li>
+    <li>Ähnlich wird mit den Koordinaten "180,80" umgegangen. Diesen Punkt möchten wir jedoch nach links verschieben. Die Koordinaten "160,80" sorgen für das gewünschte Ergebnis.</li>
+    </ul>
+
+    Nach diesem Schritt sollte dies dein Ergebnis sein:
+    <img src="../Images/Tasks/Vectorgraphics/House_To_Letter_4.png">
+    </details>
+5. Verschiebe die Spitze des Dachs nun so, dass es innerhalb der Hauswand liegt und einen Briefumschlag formt.
+    <details>
+    <summary>Auflösung</summary>
+    
+    <ul class="no-bulletpoints">
+    <li>Auch hierfür müssen die Koordinaten des Polygon-Tags angepasst werden.</li>
+    <li>Jeweils zwei aufeinanderfolgende Zahlen im "points" Attribut beschreiben die X- und Y-Koordinate eines Punktes des Polygons.</li>
+    <li>Die Koordinate "100,20" wird so angepasst, dass deren Y-Koordinate weiter nach unten verschoben wird. Die Koordinaten "100,110" sorgen für das gewünschte Ergebnis.</li>
+    </ul>
+
+    Nach diesem Schritt sollte dies dein Ergebnis sein:
+    <img src="../Images/Tasks/Vectorgraphics/House_To_Letter_5.png">
+    </details>
+
 Erstelle nun ein eigenes SVG mit dem Tool "MyPicCoder". Die Dokumentation und Anleitung für das Tool befindet sich auf der nächsten Seite, falls etwas unklar ist. Nutze den Editor um ein SVG zu erstellen. Sei kreativ und spiel ein wenig mit dem Tool rum. Mögliche Motive wären:
 
 * Ein einfaches Emoji
-* Ein Briefumschlag Icon
+* Ein Tannenbaum mit braunen Stamm und grünen Blättern
 * Ein eigenes Logo
 
 Du kannst auch über <img src="../CSS/fontawesome/downloaded_svgs/file-arrow-up-solid.svg" width="20" height="20"> ein Beispiel SVG auswählen und dieses bearbeiten und anpassen.
