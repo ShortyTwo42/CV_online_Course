@@ -41,9 +41,6 @@ Ein Problem bei Pixel-/Rastergrafiken besteht darin, dass eine verlustfreie Skal
 > ![butterflyZoom0](../Images/Rastergraphics/blue_butterfly_zoom_0.png) ![butterflyZoom1](../Images/Rastergraphics/blue_butterfly_zoom_1.png) ![butterflyZoom2](../Images/Rastergraphics/blue_butterfly_zoom_2.png) ![butterflyZoom4](../Images/Rastergraphics/blue_butterfly_zoom_3.png)
 
 
-(../Images/Rastergraphics/blue_butterfly_zoom_2.png)
-
-
 # Wie werden einfache Bildformate codiert?
 > Der Inhalt des folgenden Textes ist auch am Ende dieser Seite in einem Video zusammengefasst. Nutzte die Resource, die dir besser liegt oder lese den Text und schaue zusätzlich das Video um das Gelernte zu festigen.
 
