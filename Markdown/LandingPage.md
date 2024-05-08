@@ -30,7 +30,8 @@ Hier ist eine Übersicht aller Lektionen des CV-Online-Kurses
 [preview-lia](../Markdown/Section_5_Project.md)
 
 ## Zusätzliche Ressourcen
-Hier ist eine Sandbox mit allen möglichen Tools, die für den CV-Online-Kurs entwickelt wurden. Auch befindet sich hier die CV-Online-Kurs Projekttag Lektion, die den Inhalt der einzelnen Lektionen in komprimierter Form zusammenfasst.
+Hier ist eine Sandbox mit allen möglichen Tools, die für den CV-Online-Kurs entwickelt wurden. Auch befindet sich hier die CV-Online-Kurs Projekttag Lektion, die den Inhalt der einzelnen Lektionen in komprimierter Form zusammenfasst. Zuletzt ist hier ein Link zum Vorbereitungskurs für die "Wimmelbild Challenge", die im Rahmen des "CV Camp (2024)" angeboten wird. Dieser Kurs richtet sich jedoch eher an die Oberstufe.
 
 [preview-lia](../Markdown/Sandbox.md)
 [preview-lia](../Markdown/Project_Day.md)
+[preview-lia](../Markdown/Hidden_Object_Challenge.md)
