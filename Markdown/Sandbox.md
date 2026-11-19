@@ -14,7 +14,7 @@ comment:    Dies ist die Sandbox für den
             den Kurs entwickelt wurden werden 
             hier aufgelistet und beschrieben
 
-link:       ../CSS/Main.css
+link:       ../CSS/main.css
 
 script:     ../JavaScript/LiaScriptCustom.js
 

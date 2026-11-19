@@ -14,7 +14,7 @@ comment:    Dies ist die LandingPage
             der aus wir in jede Lektion
             wechseln können
 
-link:       ../CSS/Main.css 
+link:       ../CSS/main.css 
 
 script:     ../JavaScript/LiaScriptCustom.js
 
